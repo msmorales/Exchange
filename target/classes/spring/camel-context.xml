@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="org.mycompany.Procesos" id="helloBean"/>
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <route id="simple-route">
+            <from id="_from1" uri="file:emisor/archivo"/>
+            <convertBodyTo id="_convertBodyTo1" type="String"/>
+            <log id="_log1" message="_convertBodyTo1"/>
+            <log id="_log3" message="${body}"/>
+            <log id="Uno" message="Moviendo archivo  ${file:name}"/>
+            <to id="_to1" uri="file:receptor/archivo"/>
+            <log id="_log2" message="Archivo movido"/>
+        </route>
+    </camelContext>
+</beans>
