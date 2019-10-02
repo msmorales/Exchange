@@ -6,9 +6,11 @@
     "kind" : "Service",
     "metadata" : {
       "annotations" : {
+        "fabric8.io/git-commit" : "06f5c9c1c6335a7b3307dcf10c2445b56e781d0a",
         "fabric8.io/iconUrl" : "img/icons/camel.svg",
-        "prometheus.io/port" : "9779",
-        "prometheus.io/scrape" : "true"
+        "fabric8.io/git-branch" : "dev",
+        "prometheus.io/scrape" : "true",
+        "prometheus.io/port" : "9779"
       },
       "labels" : {
         "expose" : "true",
@@ -37,7 +39,9 @@
     "kind" : "DeploymentConfig",
     "metadata" : {
       "annotations" : {
+        "fabric8.io/git-commit" : "06f5c9c1c6335a7b3307dcf10c2445b56e781d0a",
         "fabric8.io/iconUrl" : "img/icons/camel.svg",
+        "fabric8.io/git-branch" : "dev",
         "fabric8.io/metrics-path" : "dashboard/file/camel-routes.json/?var-project=camel-ose-springboot-xml&var-version=1.0.0-SNAPSHOT"
       },
       "labels" : {
@@ -65,7 +69,9 @@
       "template" : {
         "metadata" : {
           "annotations" : {
+            "fabric8.io/git-commit" : "06f5c9c1c6335a7b3307dcf10c2445b56e781d0a",
             "fabric8.io/iconUrl" : "img/icons/camel.svg",
+            "fabric8.io/git-branch" : "dev",
             "fabric8.io/metrics-path" : "dashboard/file/camel-routes.json/?var-project=camel-ose-springboot-xml&var-version=1.0.0-SNAPSHOT"
           },
           "labels" : {
@@ -88,7 +94,7 @@
                 }
               }
             } ],
-            "image" : "mycompany/camel-ose-springboot-xml:snapshot-191001-092720-0252",
+            "image" : "mycompany/camel-ose-springboot-xml:snapshot-191002-115714-0140",
             "imagePullPolicy" : "IfNotPresent",
             "livenessProbe" : {
               "httpGet" : {
