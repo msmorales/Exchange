@@ -4,12 +4,11 @@
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="simple-route">
             <from id="_from1" uri="file:data?noop=true"/>
-            <!--Se utiliza un split para recorrer el archivo e imprimir la información  -->
-            <split id="_split1">
-                <tokenize token=","/>
-                <log id="_log1" message="${body}"/>
-                <to id="_to1" uri="file://dataResult/${body}.txt"/>
-            </split>
+            <setProperty id="_setProperty1" propertyName="to">
+                <simple>${body}</simple>
+            </setProperty>
+            <log id="_log1" message="${property.to} ${date:now}"/>
+            <to id="_to1" uri="file:dataResult/${property.to}.txt"/>
         </route>
     </camelContext>
 </beans>
