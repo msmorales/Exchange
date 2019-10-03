@@ -3,13 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="simple-route">
-            <from id="_from1" uri="file:data?noop=true"/>
-            <log id="_log1" message="\n${body}"/>
-            <setProperty id="_setProperty1" propertyName="to">
-                <xpath resultType="String">//SOAP-ENV:Envelope/SOAP-ENV:Body/prcFdValidarSaldoElement/moviEncargo/text()</xpath>
-            </setProperty>
-            <log id="_log3" message="${property.to}"/>
-            <log id="_log2" message="===============${property.to}"/>
+            <from id="_from1" uri="file:data"/>    
+            <!--Se utiliza un split para recorrer el archivo e imprimir la información  -->     
+            <split>
+              	<tokenize token=","/>
+            	<log message="${body}"/>
+            </split>	
         </route>
     </camelContext>
 </beans>
