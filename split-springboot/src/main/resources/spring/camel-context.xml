@@ -8,7 +8,7 @@
             <split id="_split1">
                 <tokenize token=","/>
                 <log id="_log1" message="${body}"/>
-                <to id="_to1" uri="file://dataResult/${body}.txt"/>
+                <to id="_to1" uri="file:dataResult?fileName=${body} ${date:now}"/>
             </split>
         </route>
     </camelContext>

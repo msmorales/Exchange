@@ -8,7 +8,7 @@
                 <simple>${body}</simple>
             </setProperty>
             <log id="_log1" message="${property.to} ${date:now}"/>
-            <to id="_to1" uri="file:dataResult/${property.to}.txt"/>
+            <to id="_to1" uri="file:dataResult?fileName=${property.to}"/>
         </route>
     </camelContext>
 </beans>
