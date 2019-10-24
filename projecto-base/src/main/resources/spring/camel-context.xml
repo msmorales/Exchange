@@ -3,15 +3,31 @@
 	xmlns:cxf="http://camel.apache.org/schema/cxf"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring        http://camel.apache.org/schema/spring/camel-spring.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd">
-	<bean id="replace-method" class="com.work.replace" />
-	<camelContext id="camel" streamCache="true"	threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
+	<!-- <bean class="com.work.replace" id="replace-method"/> -->
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" id="dataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/learn" />
+		<property name="username" value="root" />
+		<property name="password" value="admin" />
+	</bean>
+	<bean class="org.apache.camel.component.sql.SqlComponent" id="sql">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<camelContext id="camel" streamCache="true"
+		threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
 		<route id="ejercicio">
-			<from id="_from1"
-				uri="ftp:localhost/Archivos?fileName=prueba-servidor-ftp.txt&amp;password=entelgy&amp;username=entelgy" />
-			<transform>
-				<method bean="replace-method" method="replaceMethod" />
-			</transform>
-			<log id="_log1" message="\n ${body}" />
-</route>
+			<!-- <from id="_from1" uri="ftp:localhost/Archivos?fileName=prueba-servidor-ftp.txt&amp;password=entelgy&amp;username=entelgy"/> -->
+			<!-- <transform id="_transform1"> -->
+			<!-- <method bean="replace-method" method="replaceMethod"/> -->
+			<!-- </transform> -->
+			<!-- <log id="_log1" message="\n ${body}"/> -->
+			<!-- <from id="_from1" uri="timer:timerName?period=1s"/> -->
+			<!-- <to id="_to1" uri="sql://{{sql-query}}"/> -->
+			<!-- <to id="_to1" uri="sql://insert into test (id_test, nombre, apellido, 
+				edad) values (2, 'Pedro', 'Arciniegas', 26);"/> -->
+<!-- 			<log id="_log1" message="${body} \n" /> -->
+		</route>
 	</camelContext>
 </beans>
