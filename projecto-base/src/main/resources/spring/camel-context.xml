@@ -32,8 +32,8 @@
 				<xpath resultType="Integer" >/root/actors/edad</xpath>
 			</setHeader>
 			<log id="_log1" message="${header.edad}" />
-
-			<to id="_to1" uri="sql://{{sql-query-insert}});" />
+			<description>Query con consulta de insert</description>
+<!-- 			<to id="_to1" uri="sql://{{sql-query-insert}});" /> -->
 
 			<!-- <transform id="_transform1"> -->
 			<!-- <method bean="replace-method" method="replaceMethod"/> -->
