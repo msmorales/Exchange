@@ -18,16 +18,31 @@
 	<camelContext id="camel" streamCache="true"
 		threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
 		<route id="ejercicio">
-			<!-- <from id="_from1" uri="ftp:localhost/Archivos?fileName=prueba-servidor-ftp.txt&amp;password=entelgy&amp;username=entelgy"/> -->
+			<from id="_from1"
+				uri="ftp:localhost/Archivos?fileName=prueba-insert.txt&amp;password=entelgy&amp;username=entelgy" />
+
+
+			<setHeader headerName="nombre">
+				<xpath  resultType="String">/root/actors/nombre</xpath>
+			</setHeader>
+			<setHeader headerName="apellido">
+				<xpath resultType="String">/root/actors/apellido</xpath>
+			</setHeader>
+			<setHeader  headerName="edad">
+				<xpath resultType="Integer" >/root/actors/edad</xpath>
+			</setHeader>
+			<log id="_log1" message="${header.edad}" />
+
+			<to id="_to1" uri="sql://{{sql-query-insert}});" />
+
 			<!-- <transform id="_transform1"> -->
 			<!-- <method bean="replace-method" method="replaceMethod"/> -->
 			<!-- </transform> -->
-			<!-- <log id="_log1" message="\n ${body}"/> -->
+
 			<!-- <from id="_from1" uri="timer:timerName?period=1s"/> -->
 			<!-- <to id="_to1" uri="sql://{{sql-query}}"/> -->
-			<!-- <to id="_to1" uri="sql://insert into test (id_test, nombre, apellido, 
-				edad) values (2, 'Pedro', 'Arciniegas', 26);"/> -->
-<!-- 			<log id="_log1" message="${body} \n" /> -->
+<!-- 			<to id="_to1" uri="sql://insert into test (id_test, nombre, apellido, edad) values (3, ${header.nombre}, ${header.apellido}, ${header.edad});"/> -->
+			<!-- <log id="_log1" message="${body} \n" /> -->
 		</route>
 	</camelContext>
 </beans>
