@@ -18,7 +18,9 @@
 	<camelContext id="camel" streamCache="true"
 		threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
 		<dataFormats>
-			<json id="serializer" library="Jackson" />
+			<json id="serializer" library="Jackson" prettyPrint="true"/>
+			<jacksonxml id="jack" />
+			
 		</dataFormats>
 		<route id="ejercicio">
 			<from id="_from1"
@@ -50,8 +52,15 @@
 			<split>
 				<simple>body</simple>
 				<marshal ref="serializer"/>
-				<log id="_log1" message="${body} \n" />
+				
 			</split>
+			
+			<split>
+				<simple>body</simple>
+				<marshal ref="jack"/>
+				<log id="_log1" message="\n ${body}" />
+			</split>
+			
 
 		</route>
 	</camelContext>
