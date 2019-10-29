@@ -156,8 +156,8 @@
         </route>
         <route id="JMS-ROUTE-MAIN">
             <from id="_from2" uri="jms:valSaldoEncargoJMS"/>
-            <setHeader headerName="tipoEntrada">
-            	<simple>cola</simple>
+            <setHeader headerName="tipoEntrada" id="_setHeader7">
+                <simple>cola</simple>
             </setHeader>
             <unmarshal id="_unmarshal1">
                 <json library="Jackson"/>
@@ -184,7 +184,7 @@
             <stop id="_stop1"/>
         </route>
         <route id="CONSULTA-DATOS">
-            <from id="_from3" uri="direct:validacionSaldo"/>            
+            <from id="_from3" uri="direct:validacionSaldo"/>
             <setHeader headerName="moviCtcoNegocio" id="_setHeader4">
                 <simple>${body.moviCtcoNegocio}</simple>
             </setHeader>
@@ -194,7 +194,7 @@
             <setHeader headerName="moviEncargo" id="_setHeader6">
                 <simple>${body.moviEncargo}</simple>
             </setHeader>
-            <to id="_to4" uri="sql-stored:classpath:sql/validarSaldo.sql?dataSource=#dataSource"/>           
+            <to id="_to4" uri="sql-stored:classpath:sql/validarSaldo.sql?dataSource=#dataSource"/>
             <setProperty id="_setProperty4" propertyName="saldoOut">
                 <simple>${body.get('saldoOut')}</simple>
             </setProperty>
@@ -204,32 +204,34 @@
             <setProperty id="_setProperty6" propertyName="descrOut">
                 <simple>${body.get('descrOut')}</simple>
             </setProperty>
-            <choice>
-            	<when>
-            		<simple>${property.errnumOut} == '0'</simple>   
-            		 <setProperty id="_setProperty6" propertyName="descrOut">
-		                <simple>Transaccion Exitosa</simple>
-		            </setProperty>          		          	
-            		<to uri="direct:responseValidaSaldo"/>
-            	</when>
-            	<otherwise>
-            		<choice>
-            			<when>
-            				<simple>${header.tipoEntrada} contains 'cola'</simple>
-            				<to uri="direct:responseValidaSaldo"/>
-            			</when>
-            			<otherwise>
-            				<throwException exceptionType="co.com.entelgy.exceptions.ProcedureExcepcion" message="${property.descrOut}"/>
-            			</otherwise>            		
-            		</choice>            	            		            		
-            	</otherwise>            
+            <choice id="_choice1">
+                <when id="_when1">
+                    <simple>${property.errnumOut} == '0'</simple>
+                    <setProperty id="_setProperty6" propertyName="descrOut">
+                        <simple>Transaccion Exitosa</simple>
+                    </setProperty>
+                    <to id="_to5" uri="direct:responseValidaSaldo"/>
+                </when>
+                <otherwise id="_otherwise1">
+                    <choice id="_choice2">
+                        <when id="_when2">
+                            <simple>${header.tipoEntrada} contains 'cola'</simple>
+                            <to id="_to7" uri="direct:responseValidaSaldo"/>
+                        </when>
+                        <otherwise id="_otherwise2">
+                            <throwException
+                                exceptionType="co.com.entelgy.exceptions.ProcedureExcepcion"
+                                id="_throwException1" message="${property.descrOut}"/>
+                        </otherwise>
+                    </choice>
+                </otherwise>
             </choice>
         </route>
         <route id="RT-RESPUESTA-VALIDAR-SALDO">
-            <from id="_from4" uri="direct:responseValidaSaldo"/>            
+            <from id="_from4" uri="direct:responseValidaSaldo"/>
             <to id="_to6" uri="velocity:template/respuestaValidaPagos.vm"/>
             <log id="_log1" message="FINALZA RUTA (((${body})))"/>
-            <stop/>
+            <stop id="_stop2"/>
         </route>
     </camelContext>
 </beans>

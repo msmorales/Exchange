@@ -3335,3 +3335,39 @@ TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
 <td class="LineOfCaller">3051</td>
 <td class="Message">Apache Camel 2.19.1 (CamelContext: CXF-SERVICE-SALDOPAGOS-API) started in 10.461 seconds</td>
 </tr>
+
+<tr class="error even">
+<td class="Date">15:30:34.566</td>
+<td class="Thread">XNIO-2 task-1</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-SALDOPAGOS-API || SALDOENCARGOS-ROUTE-MAIN || ID-DESKTOP-0JNP98L-50537-1572380911352-0-1 || 2019-10-29T15:30:34:565} || Validation failed for: co.com.entelgy.model.RequestRest@303a26c5 errors: [property: moviCtcoNegocio; value: ; constraint: moviCtcoNegocio no puede estar vacio; property: moviCtcoCiasNego; value: ; constraint: moviCtcoCiasNego no puede estar vacio; property: moviEncargo; value: ; constraint: moviEncargo no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-50537-1572380911352-0-2]</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">15:30:58.595</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-SALDOPAGOS-API || SALDOENCARGOS-ROUTE-MAIN || ID-DESKTOP-0JNP98L-50537-1572380911352-0-4 || 2019-10-29T15:30:58:595} || Validation failed for: co.com.entelgy.model.RequestRest@2960ad53 errors: [property: moviEncargo; value: ; constraint: moviEncargo no puede estar vacio; property: moviCtcoNegocio; value: ; constraint: moviCtcoNegocio no puede estar vacio; property: moviCtcoCiasNego; value: ; constraint: moviCtcoCiasNego no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-50537-1572380911352-0-5]</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">15:31:57.474</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-SALDOPAGOS-API || SALDOENCARGOS-ROUTE-MAIN || ID-DESKTOP-0JNP98L-50537-1572380911352-0-7 || 2019-10-29T15:31:57:473} || Validation failed for: co.com.entelgy.model.RequestRest@14881734 errors: [property: moviCtcoCiasNego; value: ; constraint: moviCtcoCiasNego no puede estar vacio; property: moviCtcoNegocio; value: ; constraint: moviCtcoNegocio no puede estar vacio; property: moviEncargo; value: ; constraint: moviEncargo no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-50537-1572380911352-0-8]</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">15:32:13.416</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-SALDOPAGOS-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-50537-1572380911352-0-10 || 2019-10-29T15:32:13:413} || Error en procedure valida Saldo</td>
+</tr>

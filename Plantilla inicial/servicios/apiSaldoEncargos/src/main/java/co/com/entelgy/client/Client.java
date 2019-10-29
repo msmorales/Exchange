@@ -11,14 +11,14 @@ import org.apache.camel.Body;
 import co.com.entelgy.model.RequestRest;
 /**
  * 
- * @author Miguel Pinzon
+ * @author Michael Morales
  *
  */
 @Path("/")
 public interface Client {
 
 	@POST
-	@Path("/validacionSaldoEncargo")
+	@Path("/int/crearIngreso")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void validacionSaldo(@Body RequestRest body);
