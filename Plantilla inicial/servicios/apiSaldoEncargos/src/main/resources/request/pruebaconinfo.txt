@@ -1,0 +1,14 @@
+{
+"pMoviAuxiliar": "10003396",
+"pMoviCias": "GL199",
+"pMoviCiasOrig": "GL199",
+"pMoviCuenta": "111505019",
+"pMoviDescripcion":  "Enc 8643ADICION COLPATRIA AHORROS  2148586" ,
+"pMoviFecha": "2013-04-04",
+"pMoviFpag": "CSH",
+"pMoviNumero": "2148586",
+"pMoviOficina": 1,
+"pMoviOrpaVigencia": 0,
+"pMoviUsuaCrea": "4000",
+"pMoviValor": 4000000
+}
