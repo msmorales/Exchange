@@ -1,0 +1,6 @@
+{
+ "errnumOut":"#if(${exchange.properties.errnumOut})${exchange.properties.errnumOut}#end",
+ "descrOut":"#if(${exchange.properties.descrOut})${exchange.properties.descrOut}#end",
+ "vmovirenglonOut":"#if(${exchange.properties.vmovirenglonOut})${exchange.properties.vmovirenglonOut}#end"
+ "perrorOut":"#if(${exchange.properties.perrorOut})${exchange.properties.perrorOut}#end"
+}

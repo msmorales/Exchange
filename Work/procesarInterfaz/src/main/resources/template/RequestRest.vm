@@ -1,0 +1,10 @@
+{
+"pMoviTipoDoc": "#if(${exchange.properties.pMoviTipoDoc})${exchange.properties.pMoviTipoDoc}#end",
+"pMoviCias": "#if(${exchange.properties.pMoviCias})${exchange.properties.pMoviCias}#end",
+"pMoviCiasOrig": "#if(${exchange.properties.pMoviCiasOrig})${exchange.properties.pMoviCiasOrig}#end",
+"pMoviOficina": "#if(${exchange.properties.pMoviOficina})${exchange.properties.pMoviOficina}#end",
+"pMoviNumero": "#if(${exchange.properties.pMoviNumero})${exchange.properties.pMoviNumero}#end",
+"pMoviRenglon": "#if(${exchange.properties.pMoviRenglon})${exchange.properties.pMoviRenglon}#end",
+"p1AplicaNx1000": "#if(${exchange.properties.p1AplicaNx1000})${exchange.properties.p1AplicaNx1000}#end",
+"iMensajeTercero_inout": "#if(${exchange.properties.iMensajeTercero_inout})${exchange.properties.iMensajeTercero_inout}#end"
+}

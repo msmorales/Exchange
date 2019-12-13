@@ -1,0 +1,15 @@
+{
+	"moviApliOrig": "FON",
+	"moviCias": "GL199",
+	"moviCiasOrig": "GL199",
+	"moviOficina": 1,
+	"moviNumero": 2148585,
+	"moviOrpaVigencia": "0",
+	"moviAuxiliar": "10003396",
+	"moviFpag": "GE:J",
+	"moviDescripcion": "Enc 8643RETIRO BANCOLOMBIA AHORROS  2148585",
+	"moviUsuaCrea": "FLEXIFON",
+	"moviFecha": "2013-04-04",
+	"moviCuenta": "111505003",
+	"moviValor": 700000
+}

@@ -1,0 +1,8 @@
+#set( $boleano = "true" )
+#foreach ($foo in ${exchange.property.descripcion})
+   #if($boleano == "false")
+   	$foo
+   #else
+   		#set( $boleano = "false")
+   #end
+#end

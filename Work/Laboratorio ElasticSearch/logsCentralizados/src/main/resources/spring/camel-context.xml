@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:ctx="http://www.springframework.org/schema/context"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring        http://camel.apache.org/schema/spring/camel-spring.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <camel:errorHandler id="noErrorHandler" type="NoErrorHandler"/>
+    <bean class="org.slf4j.LoggerFactory" factory-method="getLogger" id="rh1">
+        <constructor-arg index="0" value="rh1"/>
+    </bean>
+    <bean class="co.com.entelgy.QuickstartConfiguration" id="prop"/>
+    <ctx:property-placeholder location="classpath:application.properties"/>
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="jms">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="${quickstart.urlBroker}"/>
+                <property name="closeTimeout" value="${quickstart.TimeOutBroker}"/>
+            </bean>
+        </property>
+    </bean>
+    <cxf:rsServer address="{{quickstart.endpoint_Path}}"
+        id="restApiEnpoint" serviceClass="co.com.entelgy.client.Client"/>
+    <camelContext id="ELASTICSEARCH-CENTRALIZADO-API" streamCache="true"
+        threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="properties" location="classpath:application.properties"/>
+        <threadPoolProfile defaultProfile="true" id="changedProfile"
+            maxQueueSize="100" poolSize="1"/>
+        <redeliveryPolicyProfile id="redeliveryPolicy"
+            logRetryAttempted="true" maximumRedeliveries="0"
+            redeliveryDelay="10" retriesExhaustedLogLevel="WARN"/>
+        <route id="ELASTICSEARCH-CENTRALIZADO-ROUTE-MAIN">
+            <from id="_from1" uri="cxfrs:bean:restApiEnpoint?bindingStyle=SimpleConsumer"/>
+            <toD id="_toD2" uri="direct:${header.operationName}"/>
+            <stop id="_stop1"/>
+        </route>
+        <route id="RT-GET-NOMBRE-PROYECTO">
+            <from id="_from2" uri="direct:nombreProyecto"/>
+            <setBody id="_setBody1">
+                <simple>{{camel.springboot.name}}</simple>
+            </setBody>
+        </route>
+        <route id="JMS-ROUTE-MAIN-TO-ELASTICSEARCH">
+            <from id="_from3" uri="jms:colaCentralizadaErrorJMS"/>
+            <unmarshal id="_unmarshal1">
+                <json library="Jackson"/>
+            </unmarshal>
+            <setProperty id="_setProperty1" propertyName="nombreProyectoOrquestado">
+                <simple>${body.get('nombreServicio')}</simple>
+            </setProperty>
+            <marshal id="_marshal1">
+                <json library="Jackson"/>
+            </marshal>
+            <convertBodyTo id="_convertBodyTo1" type="String"/>
+            <removeHeaders id="_removeHeaders1" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="_setHeader1">
+                <constant>application/json</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="_setHeader2">
+                <constant>POST</constant>
+            </setHeader>
+            <setHeader headerName="Authorization" id="_setHeader3">
+                <constant>Bearer UwdncTC7cbLDrubzpjZ8J2kGS7SDSWbFDajRbDNDZpI</constant>
+            </setHeader>
+            <log id="_log2" message="(((${body})))"/>
+            <toD id="_toD1" pattern="InOnly" uri="http4://{{quickstart.urlElasticSearch}}/${property.nombreProyectoOrquestado}/Estructura/${header.JMSTimestamp}?bridgeEndpoint=true&amp;throwExceptionOnFailure=false"/>
+            <log id="_log1" loggerRef="rh1" message="((((${body}))))"/>
+            <removeHeaders id="_removeHeaders2" pattern="CamelHttp*"/>
+            <stop id="_stop2"/>
+        </route>
+    </camelContext>
+</beans>

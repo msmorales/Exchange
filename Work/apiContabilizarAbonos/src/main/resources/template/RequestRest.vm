@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fi="http://xmlns.oracle.com/Enterprise/Tools/schemas/FI_IMPORT_FL_XML_REQ.VERSION_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+<fi:FI_IMPORT_FL_XML_REQ xmlns:fi="http://xmlns.oracle.com/Enterprise/Tools/schemas/FI_IMPORT_FL_XML_REQ.V1">
+	<FI_ID_XML_TEMPLATE>COBROS</FI_ID_XML_TEMPLATE>
+	<XML_VALUE><![CDATA[
+		<?xml version='1.0'?>
+		<soapenv:Envelope
+				xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				xmlns:fi="http://xmlns.oracle.com/Enterprise/Tools/schemas/CARGA_COBROS.V1">
+			<soapenv:Header/>
+			<soapenv:Body>
+				<fi:CARGA_COBROS>
+				#if(${exchange.properties.bodyRequest})${exchange.properties.bodyRequest}#end
+				</fi:CARGA_COBROS>
+			</soapenv:Body>
+		</soapenv:Envelope>]]>
+	</XML_VALUE>
+	<ENLINEA>#if(${headers.ENLINEA})${headers.ENLINEA}#end</ENLINEA>
+	<BUSINESS_UNIT>#if(${headers.BUSINESS_UNIT})${headers.BUSINESS_UNIT}#end</BUSINESS_UNIT>
+	<SEQNO>#if(${headers.SEQNO})${headers.SEQNO}#end</SEQNO>
+	<ULTIMO>#if(${headers.ULTIMO})${headers.ULTIMO}#end</ULTIMO>
+	<ID>#if(${headers.ID})${headers.ID}#end</ID>
+</fi:FI_IMPORT_FL_XML_REQ>
+</soapenv:Body>
+</soapenv:Envelope>

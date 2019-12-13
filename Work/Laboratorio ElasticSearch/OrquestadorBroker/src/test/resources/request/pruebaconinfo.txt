@@ -1,0 +1,25 @@
+{
+	"request": {
+"pTipoId": "CC",
+"pNumeroId": "57290399",
+"pApellido1": "Rodriguez",
+"pApellido2": "Mora",
+"pNombre1": "Antonio",
+"pNombre2": "Jose",
+"pDireccion": "Cra 20 # 30-50",
+"pTelefono": "1234567",
+"pEmail": "rojas.mora@hotmail.com",
+"pTipoReg": "7",
+"pNaturaleza": "N",
+"pPais": "57",
+"pDpto": "11",
+"pCiudad": "948",
+"pCiiu": "0000"
+},
+	"response": {
+    "codigoError": "500",
+    "descripcionError": "Error al ejecutar procedimiento almacenado"
+  },
+	"nombreServicio":"crearAuxiliar",
+	"fechaHora":"20/11/2019 15:15"	
+}

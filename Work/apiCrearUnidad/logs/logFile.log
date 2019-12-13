@@ -1,0 +1,3060 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Mon Dec 02 08:14:36 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="error odd">
+<td class="Date">08:14:36.100</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-4 || 2019-12-02T08:14:36:100 || </td>
+</tr>
+
+<tr class="error even">
+<td class="Date">08:14:50.167</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-7 || 2019-12-02T08:14:50:166 || CallableStatementCallback; SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; Error de E/S: Se ha forzado la interrupción de una conexión existente por el host remoto; nested exception is java.sql.SQLRecoverableException: Error de E/S: Se ha forzado la interrupción de una conexión existente por el host remoto</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:15:11.962</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-10 || 2019-12-02T08:15:11:962 || CallableStatementCallback; uncategorized SQLException for SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; SQL state [72000]; error code [20045]; ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+; nested exception is java.sql.SQLException: ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">08:15:21.550</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-13 || 2019-12-02T08:15:21:550 || </td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:15:36.439</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-16 || 2019-12-02T08:15:36:439 || CallableStatementCallback; uncategorized SQLException for SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; SQL state [72000]; error code [20045]; ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+; nested exception is java.sql.SQLException: ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:19:26.096</td>
+<td class="Thread">XNIO-2 task-13</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper</td>
+<td class="LineOfCaller">72</td>
+<td class="Message">javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Server Error
+	at org.apache.cxf.jaxrs.utils.SpecExceptions.toInternalServerErrorException(SpecExceptions.java:79)
+	at org.apache.cxf.jaxrs.utils.ExceptionUtils.toInternalServerErrorException(ExceptionUtils.java:113)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.convertExceptionToResponseIfPossible(JAXRSInInterceptor.java:227)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:215)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:77)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:262)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:299)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:218)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:274)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (&#39;}&#39; (code 125)): expected a value
+ at [Source: org.apache.cxf.transport.http.AbstractHTTPDestination$1@77331aaa; line: 12, column: 2]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2656)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextFieldName(UTF8StreamJsonParser.java:1101)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:283)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1583)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:964)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:815)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.readFromMessageBodyReader(JAXRSUtils.java:1348)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.readFromMessageBody(JAXRSUtils.java:1299)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.processParameter(JAXRSUtils.java:825)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.processParameters(JAXRSUtils.java:789)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:212)
+	... 69 more
+</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:19:27.131</td>
+<td class="Thread">XNIO-2 task-14</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper</td>
+<td class="LineOfCaller">72</td>
+<td class="Message">javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Server Error
+	at org.apache.cxf.jaxrs.utils.SpecExceptions.toInternalServerErrorException(SpecExceptions.java:79)
+	at org.apache.cxf.jaxrs.utils.ExceptionUtils.toInternalServerErrorException(ExceptionUtils.java:113)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.convertExceptionToResponseIfPossible(JAXRSInInterceptor.java:227)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:215)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:77)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:262)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:299)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:218)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:274)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (&#39;}&#39; (code 125)): expected a value
+ at [Source: org.apache.cxf.transport.http.AbstractHTTPDestination$1@522458ed; line: 12, column: 2]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2656)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextFieldName(UTF8StreamJsonParser.java:1101)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:283)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1583)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:964)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:815)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.readFromMessageBodyReader(JAXRSUtils.java:1348)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.readFromMessageBody(JAXRSUtils.java:1299)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.processParameter(JAXRSUtils.java:825)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.processParameters(JAXRSUtils.java:789)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:212)
+	... 69 more
+</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">08:19:40.939</td>
+<td class="Thread">XNIO-2 task-15</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-19 || 2019-12-02T08:19:40:938 || </td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:20:02.793</td>
+<td class="Thread">XNIO-2 task-17</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58148-1575064583714-0-22 || 2019-12-02T08:20:02:793 || CallableStatementCallback; uncategorized SQLException for SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; SQL state [72000]; error code [20045]; ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+; nested exception is java.sql.SQLException: ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Mon Dec 02 08:23:28 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Mon Dec 02 08:23:30 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Date">08:23:30.300</td>
+<td class="Thread">background-preinit</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.hibernate.validator.internal.util.Version</td>
+<td class="LineOfCaller">30</td>
+<td class="Message">HV000001: Hibernate Validator 5.3.5.Final</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:30.403</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.annotation.AnnotationConfigApplicationContext</td>
+<td class="LineOfCaller">583</td>
+<td class="Message">Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@23f77572: startup date [Mon Dec 02 08:23:30 COT 2019]; root of context hierarchy</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:31.020</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;configurationPropertiesRebinderAutoConfiguration&#39; of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bcb51f06] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Mon Dec 02 08:23:31 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="warn even">
+<td class="Date">08:23:41.748</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.config.ConfigMapPropertySource</td>
+<td class="LineOfCaller">84</td>
+<td class="Message">Can&#39;t read configMap with name: [crearunidad] in namespace:[proyectopagos-dev]. Ignoring</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:41.779</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration</td>
+<td class="LineOfCaller">93</td>
+<td class="Message">Located property source: ConfigMapPropertySource [name=&#39;configmap.crearunidad.proyectopagos-dev&#39;]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:41.786</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration</td>
+<td class="LineOfCaller">93</td>
+<td class="Message">Located property source: SecretsPropertySource [name=&#39;secrets.crearunidad.proyectopagos-dev&#39;]</td>
+</tr>
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Mon Dec 02 08:23:41 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Date">08:23:41.809</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">co.com.entelgy.Application</td>
+<td class="LineOfCaller">593</td>
+<td class="Message">No active profile set, falling back to default profiles: default</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:41.826</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext</td>
+<td class="LineOfCaller">583</td>
+<td class="Message">Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@10a40fa9: startup date [Mon Dec 02 08:23:41 COT 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@23f77572</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:42.840</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [spring/camel-context.xml]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:44.455</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader</td>
+<td class="LineOfCaller">300</td>
+<td class="Message">Skipping bean definition for [BeanMethod:name=properties,declaringClass=org.apache.camel.spring.boot.CamelAutoConfiguration]: a definition for bean &#39;properties&#39; already exists. This top-level bean definition is considered as an override.</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:44.602</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:23:44.918</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.context.annotation.ConfigurationClassPostProcessor</td>
+<td class="LineOfCaller">373</td>
+<td class="Message">Cannot enhance @Configuration bean definition &#39;refreshScope&#39; since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as &#39;static&#39;.</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:45.220</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.context.scope.GenericScope</td>
+<td class="LineOfCaller">263</td>
+<td class="Message">BeanFactory id=df12ea94-f267-3f52-8eac-d4ba1308f765</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:45.474</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration&#39; of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a09b1c09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:45.527</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.apache.camel.spring.boot.CamelAutoConfiguration&#39; of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$c2c4e228] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:45.552</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration&#39; of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bcb51f06] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:45.945</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.xnio</td>
+<td class="LineOfCaller">99</td>
+<td class="Message">XNIO version 3.3.6.Final</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:45.972</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.xnio.nio</td>
+<td class="LineOfCaller">55</td>
+<td class="Message">XNIO NIO Implementation Version 3.3.6.Final</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:23:46.110</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.undertow.websockets.jsr</td>
+<td class="LineOfCaller">67</td>
+<td class="Message">UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:23:46.110</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.undertow.websockets.jsr</td>
+<td class="LineOfCaller">76</td>
+<td class="Message">UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:46.140</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.undertow.servlet</td>
+<td class="LineOfCaller">360</td>
+<td class="Message">Initializing Spring embedded WebApplicationContext</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.140</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.context.ContextLoader</td>
+<td class="LineOfCaller">276</td>
+<td class="Message">Root WebApplicationContext: initialization completed in 4314 ms</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:23:46.271</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:23:46.272</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:23:46.272</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.652</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.ServletRegistrationBean</td>
+<td class="LineOfCaller">190</td>
+<td class="Message">Mapping servlet: &#39;dispatcherServlet&#39; to [/]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:46.679</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.ServletRegistrationBean</td>
+<td class="LineOfCaller">190</td>
+<td class="Message">Mapping servlet: &#39;CXFServlet&#39; to [/int/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.682</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;metricsFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:46.686</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;characterEncodingFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.687</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;hiddenHttpMethodFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:46.690</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;httpPutFormContentFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.690</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;requestContextFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:46.691</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;webRequestLoggingFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:46.691</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;applicationContextIdFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:48.374</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.core.xml.AbstractCamelContextFactoryBean</td>
+<td class="LineOfCaller">931</td>
+<td class="Message">Using custom default ThreadPoolProfile with id: changedProfile and implementation: org.apache.camel.model.ThreadPoolProfileDefinition@2dd5061b</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:48.492</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.converter.DefaultTypeConverter</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Loaded 221 type converters</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:48.494</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultExecutorServiceManager</td>
+<td class="LineOfCaller">119</td>
+<td class="Message">Using custom DefaultThreadPoolProfile: ThreadPoolProfile[changedProfile (true) size:1-20, keepAlive: 60 SECONDS, maxQueue: 100, allowCoreThreadTimeOut:false, rejectedPolicy:CallerRuns]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:49.602</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter</td>
+<td class="LineOfCaller">534</td>
+<td class="Message">Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@10a40fa9: startup date [Mon Dec 02 08:23:41 COT 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@23f77572</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:49.730</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:49.732</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:49.799</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:23:49.800</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:23:49.919</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:00.081</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.reload.EventBasedConfigurationChangeDetector</td>
+<td class="LineOfCaller">81</td>
+<td class="Message">Added new Kubernetes watch: config-maps-watch</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:00.086</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.reload.EventBasedConfigurationChangeDetector</td>
+<td class="LineOfCaller">110</td>
+<td class="Message">Kubernetes event-based configuration change detector activated</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:24:00.087</td>
+<td class="Thread">OkHttp https://lbocpmasterdesa.fiduprevisora.loc/...</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.fabric8.kubernetes.client.dsl.internal.WatchConnectionManager</td>
+<td class="LineOfCaller">192</td>
+<td class="Message">Exec Failure</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.net.SocketTimeoutException: connect timed out
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.Socket.connect(Socket.java:606)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.fabric8.kubernetes.client.utils.HttpClientUtils$2.intercept(HttpClientUtils.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.RealCall$AsyncCall.execute(RealCall.java:135)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info even">
+<td class="Date">08:24:03.167</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.175</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.178</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/resume || /resume.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.179</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.188</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}&quot; onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.193</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/refresh || /refresh.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.198</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/restart || /restart.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.205</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.209</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.210</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.214</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.215</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.216</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.219</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.221</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.223</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.231</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.232</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env/reset],methods=[POST]}&quot; onto public java.util.Map&lt;java.lang.String, java.lang.Object&gt; org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.235</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.257</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.258</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:03.259</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:03.263</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/pause || /pause.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.052</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">431</td>
+<td class="Message">Registering beans for JMX exposure on startup</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.085</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;configurationPropertiesRebinder&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.087</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;refreshEndpoint&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.088</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;restartEndpoint&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.089</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;refreshScope&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.091</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;environmentManager&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.098</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;environmentManager&#39;: registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.181</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;restartEndpoint&#39;: registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.200</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;refreshScope&#39;: registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.243</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;configurationPropertiesRebinder&#39;: registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=10a40fa9,type=ConfigurationPropertiesRebinder]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:04.254</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;refreshEndpoint&#39;: registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:04.256</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">431</td>
+<td class="Message">Registering beans for JMX exposure on startup</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:24:04.559</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:24:04.560</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:24:04.560</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:24:04.563</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">08:24:04.563</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">08:24:04.574</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.152</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.DefaultLifecycleProcessor</td>
+<td class="LineOfCaller">343</td>
+<td class="Message">Starting beans in phase 0</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.157</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;auditEventsEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.172</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;requestMappingEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.188</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;environmentEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.192</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;healthEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.196</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;beansEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.201</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;infoEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.210</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;loggersEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.218</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;metricsEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.222</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;traceEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.231</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;dumpEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.235</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;autoConfigurationReportEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.241</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;configurationPropertiesReportEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.243</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.DefaultLifecycleProcessor</td>
+<td class="LineOfCaller">343</td>
+<td class="Message">Starting beans in phase 2147483647</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.328</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">210</td>
+<td class="Message">Loading additional Camel XML routes from: classpath:camel/*.xml</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.341</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">224</td>
+<td class="Message">Loading additional Camel XML rests from: classpath:camel-rest/*.xml</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.344</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">142</td>
+<td class="Message">Starting CamelMainRunController to ensure the main thread keeps running</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.363</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3007</td>
+<td class="Message">Apache Camel 2.19.1 (CamelContext: CXF-SERVICE-CREAR-UNIDAD-API) is starting</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.367</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3147</td>
+<td class="Message">StreamCaching is enabled on CamelContext: CXF-SERVICE-CREAR-UNIDAD-API</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.367</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.management.ManagedManagementStrategy</td>
+<td class="LineOfCaller">192</td>
+<td class="Message">JMX is enabled</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.573</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainer</td>
+<td class="LineOfCaller">160</td>
+<td class="Message">Undertow started on port(s) 8080 (http)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:05.597</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">co.com.entelgy.Application</td>
+<td class="LineOfCaller">57</td>
+<td class="Message">Started Application in 35.718 seconds (JVM running for 61.182)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:05.638</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultRuntimeEndpointRegistry</td>
+<td class="LineOfCaller">203</td>
+<td class="Message">Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:06.867</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.component.http4.HttpComponent</td>
+<td class="LineOfCaller">371</td>
+<td class="Message">Created ClientConnectionManager org.apache.http.impl.conn.PoolingHttpClientConnectionManager@152b7773</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:07.078</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultStreamCachingStrategy</td>
+<td class="LineOfCaller">316</td>
+<td class="Message">StreamCaching in use with spool directory: C:\Users\maico\AppData\Local\Temp\camel\camel-tmp-bcce9ba2-59ba-483c-9382-1aa627db6aac and rules: [Spool &gt; 128K body size]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:07.173</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.cxf.endpoint.ServerImpl</td>
+<td class="LineOfCaller">85</td>
+<td class="Message">Setting the server&#39;s publish address to be /crearUnidad</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:07.634</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: CREAR-UNIDAD-ROUTE-MAIN started and consuming from: cxfrs://bean:restApiEnpoint?bindingStyle=SimpleConsumer</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:07.637</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: RT-GET-NOMBRE-PROYECTO started and consuming from: direct://nombreProyecto</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:07.906</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: JMS-ROUTE-MAIN started and consuming from: jms://crearUnidadJMS</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:07.909</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: CONSULTA-DATOS started and consuming from: direct://crearUnidad</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:07.911</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: RT-RESPUESTA-CREAR-UNIDAD started and consuming from: direct://responseCrearUnidad</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:24:07.914</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3050</td>
+<td class="Message">Total 5 routes, of which 5 are started.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:24:07.916</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3051</td>
+<td class="Message">Apache Camel 2.19.1 (CamelContext: CXF-SERVICE-CREAR-UNIDAD-API) started in 2.552 seconds</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:25:00.036</td>
+<td class="Thread">XNIO-2 task-1</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:25:00.090</td>
+<td class="Thread">XNIO-2 task-1</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jdbc.support.SQLErrorCodesFactory</td>
+<td class="LineOfCaller">127</td>
+<td class="Message">SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">08:25:00.107</td>
+<td class="Thread">XNIO-2 task-1</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58587-1575293027145-0-1 || 2019-12-02T08:25:00:107 || CallableStatementCallback; uncategorized SQLException for SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; SQL state [72000]; error code [20045]; ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+; nested exception is java.sql.SQLException: ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20001: ERROR AL CONSULTAR SC_CONTROL: asd * ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:25:28.954</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58587-1575293027145-0-4 || 2019-12-02T08:25:28:954 || CallableStatementCallback; uncategorized SQLException for SQL [{call PKG_WS_FXF.PRC_FD_CREA_UNIDAD(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}]; SQL state [72000]; error code [20045]; ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20045: ERROR EN WS PRC_CREA_ASIENTOS_GL: ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+; nested exception is java.sql.SQLException: ORA-20045: ERROR AL CREAR COMPROBANT - ORA-20045: ERROR EN WS PRC_CREA_ASIENTOS_GL: ORA-01403: No se ha encontrado ningún dato
+ORA-06512: en &quot;INT_WS.PKG_WS_FXF&quot;, línea 5242
+ORA-06512: en línea 1
+</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:25:39.339</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALIZA RUTA ((({
+ &quot;vActRta&quot;:&quot;0&quot;,
+ &quot;rNroComp&quot;:&quot;&quot;
+})))</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:25:56.347</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-58587-1575293027145-0-11 || 2019-12-02T08:25:56:347 || </td>
+</tr>
+
+<tr class="error even">
+<td class="Date">08:27:00.940</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-58587-1575293027145-0-14 || 2019-12-02T08:27:00:940 || Validation failed for: co.com.entelgy.model.RequestRest@5f496dff errors: [property: moviNumero; value: ; constraint: moviNumero no puede ser vacio; ]. Exchange[ID-DESKTOP-0JNP98L-58587-1575293027145-0-15]</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">08:27:12.043</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-58587-1575293027145-0-17 || 2019-12-02T08:27:12:043 || Validation failed for: co.com.entelgy.model.RequestRest@2336a50 errors: [property: moviNumero; value: -; constraint: El campo moviNumero es numero entero de 10 digitos; ]. Exchange[ID-DESKTOP-0JNP98L-58587-1575293027145-0-18]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">08:27:20.960</td>
+<td class="Thread">XNIO-2 task-13</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALIZA RUTA ((({
+ &quot;vActRta&quot;:&quot;0&quot;,
+ &quot;rNroComp&quot;:&quot;&quot;
+})))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">08:27:26.863</td>
+<td class="Thread">XNIO-2 task-15</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALIZA RUTA ((({
+ &quot;vActRta&quot;:&quot;0&quot;,
+ &quot;rNroComp&quot;:&quot;&quot;
+})))</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 12 16:07:33 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 12 16:07:35 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Date">16:07:35.495</td>
+<td class="Thread">background-preinit</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.hibernate.validator.internal.util.Version</td>
+<td class="LineOfCaller">30</td>
+<td class="Message">HV000001: Hibernate Validator 5.3.5.Final</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:35.574</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.annotation.AnnotationConfigApplicationContext</td>
+<td class="LineOfCaller">583</td>
+<td class="Message">Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1c26c416: startup date [Thu Dec 12 16:07:35 COT 2019]; root of context hierarchy</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:36.091</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;configurationPropertiesRebinderAutoConfiguration&#39; of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$206deb67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 12 16:07:36 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="warn even">
+<td class="Date">16:07:47.041</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.config.ConfigMapPropertySource</td>
+<td class="LineOfCaller">84</td>
+<td class="Message">Can&#39;t read configMap with name: [crearunidad] in namespace:[proyectopagos-dev]. Ignoring</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:47.068</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration</td>
+<td class="LineOfCaller">93</td>
+<td class="Message">Located property source: ConfigMapPropertySource [name=&#39;configmap.crearunidad.proyectopagos-dev&#39;]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:47.076</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration</td>
+<td class="LineOfCaller">93</td>
+<td class="Message">Located property source: SecretsPropertySource [name=&#39;secrets.crearunidad.proyectopagos-dev&#39;]</td>
+</tr>
+</table>
+</body></html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 12 16:07:47 COT 2019</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Date">16:07:47.102</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">co.com.entelgy.Application</td>
+<td class="LineOfCaller">593</td>
+<td class="Message">No active profile set, falling back to default profiles: default</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:47.120</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext</td>
+<td class="LineOfCaller">583</td>
+<td class="Message">Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@15fc5ec9: startup date [Thu Dec 12 16:07:47 COT 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1c26c416</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:48.167</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [spring/camel-context.xml]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:49.646</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader</td>
+<td class="LineOfCaller">300</td>
+<td class="Message">Skipping bean definition for [BeanMethod:name=properties,declaringClass=org.apache.camel.spring.boot.CamelAutoConfiguration]: a definition for bean &#39;properties&#39; already exists. This top-level bean definition is considered as an override.</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:49.779</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:07:50.092</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.context.annotation.ConfigurationClassPostProcessor</td>
+<td class="LineOfCaller">373</td>
+<td class="Message">Cannot enhance @Configuration bean definition &#39;refreshScope&#39; since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as &#39;static&#39;.</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:50.388</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.cloud.context.scope.GenericScope</td>
+<td class="LineOfCaller">263</td>
+<td class="Message">BeanFactory id=df12ea94-f267-3f52-8eac-d4ba1308f765</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:50.617</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration&#39; of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$453e86a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:50.676</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.apache.camel.spring.boot.CamelAutoConfiguration&#39; of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$267dae89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:50.695</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker</td>
+<td class="LineOfCaller">325</td>
+<td class="Message">Bean &#39;org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration&#39; of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$206deb67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.013</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.xnio</td>
+<td class="LineOfCaller">99</td>
+<td class="Message">XNIO version 3.3.6.Final</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.037</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.xnio.nio</td>
+<td class="LineOfCaller">55</td>
+<td class="Message">XNIO NIO Implementation Version 3.3.6.Final</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:07:51.133</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.undertow.websockets.jsr</td>
+<td class="LineOfCaller">67</td>
+<td class="Message">UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:07:51.134</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.undertow.websockets.jsr</td>
+<td class="LineOfCaller">76</td>
+<td class="Message">UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.163</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.undertow.servlet</td>
+<td class="LineOfCaller">360</td>
+<td class="Message">Initializing Spring embedded WebApplicationContext</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.163</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.context.ContextLoader</td>
+<td class="LineOfCaller">276</td>
+<td class="Message">Root WebApplicationContext: initialization completed in 4043 ms</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:07:51.337</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:07:51.338</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:07:51.339</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.637</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.ServletRegistrationBean</td>
+<td class="LineOfCaller">190</td>
+<td class="Message">Mapping servlet: &#39;dispatcherServlet&#39; to [/]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.643</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.ServletRegistrationBean</td>
+<td class="LineOfCaller">190</td>
+<td class="Message">Mapping servlet: &#39;CXFServlet&#39; to [/int/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.645</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;metricsFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.646</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;characterEncodingFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.647</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;hiddenHttpMethodFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.648</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;httpPutFormContentFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.648</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;requestContextFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:51.649</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;webRequestLoggingFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:51.649</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.web.servlet.FilterRegistrationBean</td>
+<td class="LineOfCaller">258</td>
+<td class="Message">Mapping filter: &#39;applicationContextIdFilter&#39; to: [/*]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:52.685</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.core.xml.AbstractCamelContextFactoryBean</td>
+<td class="LineOfCaller">931</td>
+<td class="Message">Using custom default ThreadPoolProfile with id: changedProfile and implementation: org.apache.camel.model.ThreadPoolProfileDefinition@516bc020</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:52.757</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.converter.DefaultTypeConverter</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Loaded 221 type converters</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:52.758</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultExecutorServiceManager</td>
+<td class="LineOfCaller">119</td>
+<td class="Message">Using custom DefaultThreadPoolProfile: ThreadPoolProfile[changedProfile (true) size:1-20, keepAlive: 60 SECONDS, maxQueue: 100, allowCoreThreadTimeOut:false, rejectedPolicy:CallerRuns]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:53.465</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter</td>
+<td class="LineOfCaller">534</td>
+<td class="Message">Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@15fc5ec9: startup date [Thu Dec 12 16:07:47 COT 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1c26c416</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:53.633</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:53.636</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:53.708</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:07:53.711</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:07:53.820</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</td>
+<td class="LineOfCaller">362</td>
+<td class="Message">Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:04.056</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.reload.EventBasedConfigurationChangeDetector</td>
+<td class="LineOfCaller">81</td>
+<td class="Message">Added new Kubernetes watch: config-maps-watch</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:04.060</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">io.fabric8.spring.cloud.kubernetes.reload.EventBasedConfigurationChangeDetector</td>
+<td class="LineOfCaller">110</td>
+<td class="Message">Kubernetes event-based configuration change detector activated</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:08:04.069</td>
+<td class="Thread">OkHttp https://lbocpmasterdesa.fiduprevisora.loc/...</td>
+<td class="Level">WARN</td>
+<td class="Logger">io.fabric8.kubernetes.client.dsl.internal.WatchConnectionManager</td>
+<td class="LineOfCaller">192</td>
+<td class="Message">Exec Failure</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.net.SocketTimeoutException: connect timed out
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.Socket.connect(Socket.java:606)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.fabric8.kubernetes.client.utils.HttpClientUtils$2.intercept(HttpClientUtils.java:93)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.RealCall$AsyncCall.execute(RealCall.java:135)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info even">
+<td class="Date">16:08:05.581</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.583</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.585</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.587</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.588</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.589</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/resume || /resume.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.591</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.593</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.594</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env/reset],methods=[POST]}&quot; onto public java.util.Map&lt;java.lang.String, java.lang.Object&gt; org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.595</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/restart || /restart.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.596</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/refresh || /refresh.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.599</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/pause || /pause.json],methods=[POST]}&quot; onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.600</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.602</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}&quot; onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.604</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.606</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.608</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.609</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.610</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.611</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.614</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:05.616</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:05.617</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping</td>
+<td class="LineOfCaller">543</td>
+<td class="Message">Mapped &quot;{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.039</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">431</td>
+<td class="Message">Registering beans for JMX exposure on startup</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.055</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;configurationPropertiesRebinder&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.056</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;refreshEndpoint&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.057</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;restartEndpoint&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.058</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;refreshScope&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.059</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">916</td>
+<td class="Message">Bean with name &#39;environmentManager&#39; has been autodetected for JMX exposure</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.063</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;environmentManager&#39;: registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.083</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;restartEndpoint&#39;: registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.097</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;refreshScope&#39;: registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.111</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;configurationPropertiesRebinder&#39;: registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=15fc5ec9,type=ConfigurationPropertiesRebinder]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.121</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jmx.export.annotation.AnnotationMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;refreshEndpoint&#39;: registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.122</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">431</td>
+<td class="Message">Registering beans for JMX exposure on startup</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:08:06.323</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:08:06.323</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:08:06.324</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:08:06.325</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Date">16:08:06.326</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="warn even">
+<td class="Date">16:08:06.327</td>
+<td class="Thread">main</td>
+<td class="Level">WARN</td>
+<td class="Logger">org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor</td>
+<td class="LineOfCaller">427</td>
+<td class="Message">The @ConfigurationProperties bean class org.apache.cxf.spring.boot.autoconfigure.CxfProperties contains validation constraints but had not been annotated with @Validated.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.569</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.DefaultLifecycleProcessor</td>
+<td class="LineOfCaller">343</td>
+<td class="Message">Starting beans in phase 0</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.572</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;auditEventsEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.580</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;requestMappingEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.591</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;environmentEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.594</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;healthEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.598</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;beansEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.601</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;infoEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.605</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;loggersEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.613</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;metricsEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.617</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;traceEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.620</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;dumpEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.625</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;autoConfigurationReportEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.630</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter</td>
+<td class="LineOfCaller">678</td>
+<td class="Message">Located managed bean &#39;configurationPropertiesReportEndpoint&#39;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.631</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.context.support.DefaultLifecycleProcessor</td>
+<td class="LineOfCaller">343</td>
+<td class="Message">Starting beans in phase 2147483647</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.680</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">210</td>
+<td class="Message">Loading additional Camel XML routes from: classpath:camel/*.xml</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.681</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">224</td>
+<td class="Message">Loading additional Camel XML rests from: classpath:camel-rest/*.xml</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.684</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.boot.RoutesCollector</td>
+<td class="LineOfCaller">142</td>
+<td class="Message">Starting CamelMainRunController to ensure the main thread keeps running</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.695</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3007</td>
+<td class="Message">Apache Camel 2.19.1 (CamelContext: CXF-SERVICE-CREAR-UNIDAD-API) is starting</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.700</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3147</td>
+<td class="Message">StreamCaching is enabled on CamelContext: CXF-SERVICE-CREAR-UNIDAD-API</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.701</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.management.ManagedManagementStrategy</td>
+<td class="LineOfCaller">192</td>
+<td class="Message">JMX is enabled</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.777</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainer</td>
+<td class="LineOfCaller">160</td>
+<td class="Message">Undertow started on port(s) 8080 (http)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:06.786</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">co.com.entelgy.Application</td>
+<td class="LineOfCaller">57</td>
+<td class="Message">Started Application in 31.829 seconds (JVM running for 41.799)</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:06.880</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultRuntimeEndpointRegistry</td>
+<td class="LineOfCaller">203</td>
+<td class="Message">Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:07.738</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.component.http4.HttpComponent</td>
+<td class="LineOfCaller">371</td>
+<td class="Message">Created ClientConnectionManager org.apache.http.impl.conn.PoolingHttpClientConnectionManager@7d536aa6</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:07.986</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.impl.DefaultStreamCachingStrategy</td>
+<td class="LineOfCaller">316</td>
+<td class="Message">StreamCaching in use with spool directory: C:\Users\maico\AppData\Local\Temp\camel\camel-tmp-6ad86184-1c93-476f-a1fe-e02a6b95df4f and rules: [Spool &gt; 128K body size]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:08.095</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.cxf.endpoint.ServerImpl</td>
+<td class="LineOfCaller">85</td>
+<td class="Message">Setting the server&#39;s publish address to be /crearUnidad</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:08.504</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: CREAR-UNIDAD-ROUTE-MAIN started and consuming from: cxfrs://bean:restApiEnpoint?bindingStyle=SimpleConsumer</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:08.506</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: RT-GET-NOMBRE-PROYECTO started and consuming from: direct://nombreProyecto</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:08.750</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: JMS-ROUTE-MAIN started and consuming from: jms://crearUnidadJMS</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:08.810</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: CONSULTA-DATOS started and consuming from: direct://crearUnidad</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:08.910</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3836</td>
+<td class="Message">Route: RT-RESPUESTA-CREAR-UNIDAD started and consuming from: direct://responseCrearUnidad</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:08:08.912</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3050</td>
+<td class="Message">Total 5 routes, of which 5 are started.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:08:08.913</td>
+<td class="Thread">CamelMainRunController</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.spring.SpringCamelContext</td>
+<td class="LineOfCaller">3051</td>
+<td class="Message">Apache Camel 2.19.1 (CamelContext: CXF-SERVICE-CREAR-UNIDAD-API) started in 2.218 seconds</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:09:37.346</td>
+<td class="Thread">XNIO-2 task-1</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALIZA RUTA ((({
+ &quot;vActRta&quot;:&quot;0&quot;,
+ &quot;rNroComp&quot;:&quot;&quot;
+})))</td>
+</tr>
+
+<tr class="error odd">
+<td class="Date">16:09:44.258</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-65368-1576184871960-0-5 || 2019-12-12T16:09:44:258 || Validation failed for: co.com.entelgy.model.RequestRest@c34bd0f errors: [property: moviApliOrig; value: ; constraint: moviApliOrig no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-65368-1576184871960-0-6]</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">16:09:44.304</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((({
+	&quot;request&quot; : {&quot;moviApliOrig&quot;:&quot;&quot;,&quot;moviCiasOrig&quot;:&quot;GL197&quot;,&quot;moviCias&quot;:&quot;1&quot;,&quot;moviOficina&quot;:&quot;1&quot;,&quot;moviNumero&quot;:&quot;1234567890&quot;,&quot;moviFpag&quot;:&quot;CSH&quot;,&quot;moviDescripcion&quot;:&quot;Enc 8643ADICION COLPATRIA AHORROS  2148586&quot;,&quot;moviUsuaCrea&quot;:&quot;FLEXIFON&quot;,&quot;moviFecha&quot;:&quot;2013-04-04&quot;,&quot;moviValor&quot;:&quot;4000000&quot;},
+	&quot;response&quot;: {
+					&quot;codigoError&quot;: &quot;500&quot;,
+					&quot;descripcionError&quot;: &quot;Error en estructura de la peticion: moviApliOrig =&gt; moviApliOrig no puede estar vacio, &quot;
+				},
+	&quot;nombreServicio&quot;:&quot;crearunidad&quot;,
+	&quot;fechaHora&quot;:&quot;2019-12-12T16:09:44:292&quot;
+}
+
+))))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:09:44.314</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.apache.camel.component.http4.HttpComponent</td>
+<td class="LineOfCaller">371</td>
+<td class="Message">Created ClientConnectionManager org.apache.http.impl.conn.PoolingHttpClientConnectionManager@5aa8f5bc</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">16:10:38.965</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-65368-1576184871960-0-8 || 2019-12-12T16:10:38:965 || Validation failed for: co.com.entelgy.model.RequestRest@1994f35f errors: [property: moviApliOrig; value: ; constraint: moviApliOrig no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-65368-1576184871960-0-9]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:10:38.974</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((({
+	&quot;request&quot; : {&quot;moviApliOrig&quot;:&quot;&quot;,&quot;moviCiasOrig&quot;:&quot;GL197&quot;,&quot;moviCias&quot;:&quot;1&quot;,&quot;moviOficina&quot;:&quot;1&quot;,&quot;moviNumero&quot;:&quot;1234567890&quot;,&quot;moviFpag&quot;:&quot;CSH&quot;,&quot;moviDescripcion&quot;:&quot;Enc 8643ADICION COLPATRIA AHORROS  2148586&quot;,&quot;moviUsuaCrea&quot;:&quot;FLEXIFON&quot;,&quot;moviFecha&quot;:&quot;2013-04-04&quot;,&quot;moviValor&quot;:&quot;4000000&quot;},
+	&quot;response&quot;: {
+					&quot;codigoError&quot;: &quot;500&quot;,
+					&quot;descripcionError&quot;: &quot;Error en estructura de la peticion: moviApliOrig =&gt; moviApliOrig no puede estar vacio, &quot;
+				},
+	&quot;nombreServicio&quot;:&quot;crearunidad&quot;,
+	&quot;fechaHora&quot;:&quot;2019-12-12T16:10:38:971&quot;
+}
+
+))))</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">16:10:39.479</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-65368-1576184871960-0-11 || 2019-12-12T16:10:39:479 || Validation failed for: co.com.entelgy.model.RequestRest@39caddfe errors: [property: moviApliOrig; value: ; constraint: moviApliOrig no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-65368-1576184871960-0-12]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:10:39.486</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((({
+	&quot;request&quot; : {&quot;moviApliOrig&quot;:&quot;&quot;,&quot;moviCiasOrig&quot;:&quot;GL197&quot;,&quot;moviCias&quot;:&quot;1&quot;,&quot;moviOficina&quot;:&quot;1&quot;,&quot;moviNumero&quot;:&quot;1234567890&quot;,&quot;moviFpag&quot;:&quot;CSH&quot;,&quot;moviDescripcion&quot;:&quot;Enc 8643ADICION COLPATRIA AHORROS  2148586&quot;,&quot;moviUsuaCrea&quot;:&quot;FLEXIFON&quot;,&quot;moviFecha&quot;:&quot;2013-04-04&quot;,&quot;moviValor&quot;:&quot;4000000&quot;},
+	&quot;response&quot;: {
+					&quot;codigoError&quot;: &quot;500&quot;,
+					&quot;descripcionError&quot;: &quot;Error en estructura de la peticion: moviApliOrig =&gt; moviApliOrig no puede estar vacio, &quot;
+				},
+	&quot;nombreServicio&quot;:&quot;crearunidad&quot;,
+	&quot;fechaHora&quot;:&quot;2019-12-12T16:10:39:482&quot;
+}
+
+))))</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">16:10:39.949</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREAR-UNIDAD-API || CREAR-UNIDAD-ROUTE-MAIN || ID-DESKTOP-0JNP98L-65368-1576184871960-0-14 || 2019-12-12T16:10:39:948 || Validation failed for: co.com.entelgy.model.RequestRest@41bc453f errors: [property: moviApliOrig; value: ; constraint: moviApliOrig no puede estar vacio; ]. Exchange[ID-DESKTOP-0JNP98L-65368-1576184871960-0-15]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">16:10:39.956</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((({
+	&quot;request&quot; : {&quot;moviApliOrig&quot;:&quot;&quot;,&quot;moviCiasOrig&quot;:&quot;GL197&quot;,&quot;moviCias&quot;:&quot;1&quot;,&quot;moviOficina&quot;:&quot;1&quot;,&quot;moviNumero&quot;:&quot;1234567890&quot;,&quot;moviFpag&quot;:&quot;CSH&quot;,&quot;moviDescripcion&quot;:&quot;Enc 8643ADICION COLPATRIA AHORROS  2148586&quot;,&quot;moviUsuaCrea&quot;:&quot;FLEXIFON&quot;,&quot;moviFecha&quot;:&quot;2013-04-04&quot;,&quot;moviValor&quot;:&quot;4000000&quot;},
+	&quot;response&quot;: {
+					&quot;codigoError&quot;: &quot;500&quot;,
+					&quot;descripcionError&quot;: &quot;Error en estructura de la peticion: moviApliOrig =&gt; moviApliOrig no puede estar vacio, &quot;
+				},
+	&quot;nombreServicio&quot;:&quot;crearunidad&quot;,
+	&quot;fechaHora&quot;:&quot;2019-12-12T16:10:39:954&quot;
+}
+
+))))</td>
+</tr>

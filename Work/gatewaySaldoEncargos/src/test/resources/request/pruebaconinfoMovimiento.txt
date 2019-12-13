@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://fiduprod/WsFXF.wsdl/types/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:prcInsertaFdTmovimientoElement>
+         <typ:auxi>0010009252</typ:auxi>
+         <typ:cias>AP266</typ:cias>
+         <typ:ciasDest>AP266</typ:ciasDest>
+         <typ:descri>ARRENDAMIENTO DE EQUIPOS</typ:descri>
+         <typ:encargo>8911</typ:encargo>
+         <typ:encargoDest>0</typ:encargoDest>
+         <typ:entidad>19</typ:entidad>
+         <typ:fecha>2017-12-15T10:53:06.8116407+02:00</typ:fecha>
+         <typ:pFpago>EFT:X</typ:pFpago>
+         <typ:pOrpaVigencia>2017</typ:pOrpaVigencia>
+         <typ:pOrpaNumero>V:AP266:00001781:GL266:CCAEV:8911:000616:1870</typ:pOrpaNumero>
+         <typ:pValor>760082.15</typ:pValor>
+         <typ:pGravamen>0</typ:pGravamen>
+         <typ:pCuenta>514505002</typ:pCuenta>
+         <typ:pMoviCtaDest>21003056807</typ:pMoviCtaDest>
+         <typ:pMoviTpctDest>03</typ:pMoviTpctDest>
+         <typ:pMoviTpctPag>11</typ:pMoviTpctPag>
+         <typ:pFondo>CCAEV</typ:pFondo>
+         <typ:pTipoReg>CAU</typ:pTipoReg>
+      </typ:prcInsertaFdTmovimientoElement>
+   </soapenv:Body>
+</soapenv:Envelope>

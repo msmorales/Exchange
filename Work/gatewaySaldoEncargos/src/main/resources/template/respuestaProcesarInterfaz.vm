@@ -1,0 +1,9 @@
+      <typ:prcFdInterfazResponseElement xmlns:typ="http://fiduprod/WsFXF.wsdl/types/">
+         <typ:result>
+            <typ:errnumOut>#if(${exchange.properties.errnumOut})${exchange.properties.errnumOut}#end</typ:errnumOut>
+            <typ:imensajeerrorOut>#if(${exchange.properties.imensajeerrorOut})${exchange.properties.imensajeerrorOut}#end</typ:imensajeerrorOut>
+            <typ:descrOut>#if(${exchange.properties.descrOut})${exchange.properties.descrOut}#end</typ:descrOut>
+            <typ:imensajeterceroInout>#if(${exchange.properties.imensajeterceroInout})${exchange.properties.imensajeterceroInout}#end</typ:imensajeterceroInout>
+            <typ:ivalidacionOut>#if(${exchange.properties.ivalidacionOut})${exchange.properties.ivalidacionOut}#end</typ:ivalidacionOut>
+         </typ:result>
+      </typ:prcFdInterfazResponseElement>

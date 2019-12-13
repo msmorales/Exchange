@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://fiduprod/WsFXF.wsdl/types/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:prcFdInterfazElement>
+         <typ:pMoviTipoDoc>CAU</typ:pMoviTipoDoc>
+         <typ:pMoviCias>APC04</typ:pMoviCias>
+         <typ:pMoviCiasOrig>APC04</typ:pMoviCiasOrig>
+         <typ:pMoviOficina>1</typ:pMoviOficina>
+         <typ:pMoviNumero>10153772</typ:pMoviNumero>
+         <typ:pMoviRenglon>1</typ:pMoviRenglon>
+         <typ:p1AplicaNx1000></typ:p1AplicaNx1000>
+         <typ:iMensajeTercero_inout></typ:iMensajeTercero_inout>
+      </typ:prcFdInterfazElement>
+   </soapenv:Body>
+</soapenv:Envelope>

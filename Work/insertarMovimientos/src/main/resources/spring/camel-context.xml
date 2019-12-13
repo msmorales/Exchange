@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:ctx="http://www.springframework.org/schema/context"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring        http://camel.apache.org/schema/spring/camel-spring.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" id="jsonProvider"/>
+    <bean class="co.com.entelgy.exceptions.ErrorExcepcionInterceptor" id="ErrorExcepcionInterceptor"/>
+    <bean class="co.com.entelgy.processor.RespuestaErrorProcessor" id="respuestaErrorProcessor"/>
+    <camel:errorHandler id="noErrorHandler" type="NoErrorHandler"/>
+    <bean class="org.slf4j.LoggerFactory" factory-method="getLogger" id="rh1">
+        <constructor-arg index="0" value="rh1"/>
+    </bean>
+    <bean class="co.com.entelgy.QuickstartConfiguration" id="prop"/>
+    <ctx:property-placeholder location="classpath:application.properties"/>
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="jms">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="${quickstart.urlBroker}"/>
+                <property name="closeTimeout" value="${quickstart.TimeOutBroker}"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close" id="dataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="${quickstart.jdbcConnection_Oracle}"/>
+        <property name="username" value="${quickstart.jdbcUserName_Oracle}"/>
+        <property name="password" value="${quickstart.jdbcPassword_Oracle}"/>
+    </bean>
+    <cxf:rsServer address="{{quickstart.endpoint_Movimientos_Path}}"
+        id="restApiEnpoint" serviceClass="co.com.entelgy.client.Client">
+        <cxf:providers>
+            <ref bean="jsonProvider"/>
+        </cxf:providers>
+        <cxf:outInterceptors>
+            <ref bean="ErrorExcepcionInterceptor"/>
+        </cxf:outInterceptors>
+    </cxf:rsServer>
+    <camelContext id="CXF-SERVICE-MOVIMIENTOS-API" streamCache="true"
+        threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="properties" location="classpath:application.properties"/>
+        <threadPoolProfile defaultProfile="true" id="changedProfile"
+            maxQueueSize="100" poolSize="1"/>
+        <redeliveryPolicyProfile id="redeliveryPolicy"
+            logRetryAttempted="true" maximumRedeliveries="0"
+            redeliveryDelay="10" retriesExhaustedLogLevel="WARN"/>
+        <onException id="CustomExceptionHandling"
+            redeliveryPolicyRef="redeliveryPolicy" useOriginalMessage="true">
+            <exception>org.apache.camel.component.bean.validator.BeanValidationException</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.message}"/>
+            <log loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setHeader headerName="trazaerror">
+                <simple>${exception.stacktrace}</simple>
+            </setHeader>
+            <setProperty propertyName="codigohttp">
+                <simple>{{quickstart.codigoRespuesta_ErrorGeneral}}</simple>
+            </setProperty>
+            <setProperty propertyName="codigo">
+                <simple>{{quickstart.codigo_ErrorEstructura}}</simple>
+            </setProperty>
+            <setProperty propertyName="descripcion">
+                <simple>{{quickstart.descripcion_ErrorEstructura}}</simple>
+            </setProperty>
+            <bean method="process" ref="respuestaErrorProcessor"/>
+            <stop/>
+        </onException>
+        <onException id="CustomExceptionHandling"
+            redeliveryPolicyRef="redeliveryPolicy" useOriginalMessage="true">
+            <exception>co.com.entelgy.exceptions.ProcedureExcepcion</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.message}"/>
+            <log loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setHeader headerName="trazaerror">
+                <simple>${exception.stacktrace}</simple>
+            </setHeader>
+            <setProperty propertyName="codigohttp">
+                <simple>{{quickstart.codigoRespuesta_ErrorGeneral}}</simple>
+            </setProperty>
+            <setProperty propertyName="codigo">
+                <simple>{{quickstart.codigo_ErrorProcedure}}</simple>
+            </setProperty>
+            <setProperty propertyName="descripcion">
+                <simple>{{quickstart.descripcion_ErrorProcedure}}</simple>
+            </setProperty>
+            <bean method="process" ref="respuestaErrorProcessor"/>
+            <stop/>
+        </onException>
+        <onException id="CustomExceptionHandling"
+            redeliveryPolicyRef="redeliveryPolicy" useOriginalMessage="true">
+            <exception>java.sql.SQLRecoverableException</exception>
+            <exception>org.springframework.jdbc.CannotGetJdbcConnectionException</exception>
+            <exception>org.springframework.jdbc.BadSqlGrammarException</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.message}"/>
+            <log loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setHeader headerName="trazaerror">
+                <simple>${exception.stacktrace}</simple>
+            </setHeader>
+            <setProperty propertyName="codigohttp">
+                <simple>{{quickstart.codigoRespuesta_ErrorGeneral}}</simple>
+            </setProperty>
+            <setProperty propertyName="codigo">
+                <simple>{{quickstart.codigo_ErrorProveedor}}</simple>
+            </setProperty>
+            <setProperty propertyName="descripcion">
+                <simple>{{quickstart.descripcion_ErrorProveedor}}</simple>
+            </setProperty>
+            <setProperty propertyName="codigoTimeout">
+                <simple>{{quickstart.codigo_ErrorTimeOut}}</simple>
+            </setProperty>
+            <setProperty propertyName="descripcionTimeout">
+                <simple>{{quickstart.descripcion_ErrorTimeOut}}</simple>
+            </setProperty>
+            <bean method="process" ref="respuestaErrorProcessor"/>
+            <stop/>
+        </onException>
+        <onException id="CustomExceptionHandling"
+            redeliveryPolicyRef="redeliveryPolicy" useOriginalMessage="true">
+            <exception>java.lang.Exception</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.message}"/>
+            <log loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setHeader headerName="trazaerror">
+                <simple>${exception.stacktrace}</simple>
+            </setHeader>
+            <setProperty propertyName="codigohttp">
+                <simple>{{quickstart.codigoRespuesta_ErrorGeneral}}</simple>
+            </setProperty>
+            <setProperty propertyName="codigo">
+                <simple>{{quickstart.codigo_ErrorInterno}}</simple>
+            </setProperty>
+            <setProperty propertyName="descripcion">
+                <simple>{{quickstart.descripcion_ErrorInterno}}</simple>
+            </setProperty>
+            <bean method="process" ref="respuestaErrorProcessor"/>
+            <stop/>
+        </onException>
+        <route id="MOVIMIENTOS-ROUTE-MAIN">
+            <from id="_from1" uri="cxfrs:bean:restApiEnpoint?bindingStyle=SimpleConsumer"/>
+            <to id="_to1" uri="bean-validator://x"/>
+            <removeHeaders id="_removeHeaders1" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="_setHeader1">
+                <constant>application/json</constant>
+            </setHeader>
+            <toD id="_toD1" uri="direct:${header.operationName}"/>
+        </route>
+        <route id="RT-GET-NOMBRE-PROYECTO">
+            <from uri="direct:nombreProyecto"/>
+            <setBody id="_setBody1">
+                <simple>{{camel.springboot.name}}</simple>
+            </setBody>
+        </route>
+        <route id="JMS-ROUTE-MAIN">
+            <from id="_from5" uri="jms:movimientosJMS"/>
+            <setHeader headerName="tipoEntrada" id="_setHeader7">
+                <simple>cola</simple>
+            </setHeader>
+            <unmarshal id="_unmarshal1">
+                <json library="Jackson"/>
+            </unmarshal>
+            <setProperty id="_setProperty1" propertyName="auxi">
+                <simple>${body.get('auxi')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty2" propertyName="cias">
+                <simple>${body.get('cias')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty3" propertyName="ciasDest">
+                <simple>${body.get('ciasDest')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty8" propertyName="descri">
+                <simple>${body.get('descri')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty9" propertyName="encargo">
+                <simple>${body.get('encargo')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty10" propertyName="movimientoDest">
+                <simple>${body.get('movimientoDest')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty11" propertyName="entidad">
+                <simple>${body.get('entidad')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty12" propertyName="fecha">
+                <simple>${body.get('fecha')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty13" propertyName="pFpago">
+                <simple>${body.get('pFpago')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty14" propertyName="pOrpaVigencia">
+                <simple>${body.get('pOrpaVigencia')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty15" propertyName="pOrpaNumero">
+                <simple>${body.get('pOrpaNumero')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty16" propertyName="pValor">
+                <simple>${body.get('pValor')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty17" propertyName="pGravamen">
+                <simple>${body.get('pGravamen')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty18" propertyName="pCuenta">
+                <simple>${body.get('pCuenta')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty19" propertyName="pMoviCtaDest">
+                <simple>${body.get('pMoviCtaDest')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty20" propertyName="pMoviTpctDest">
+                <simple>${body.get('pMoviTpctDest')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty21" propertyName="pMoviTpctPag">
+                <simple>${body.get('pMoviTpctPag')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty22" propertyName="pFondo">
+                <simple>${body.get('pFondo')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty23" propertyName="pTipoReg">
+                <simple>${body.get('pTipoReg')}</simple>
+            </setProperty>
+            <to id="_to2" uri="velocity:template/RequestRest.vm"/>
+            <setHeader headerName="Content-Type" id="_setHeader2">
+                <constant>application/json</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="_setHeader3">
+                <constant>POST</constant>
+            </setHeader>
+            <to id="_to3" pattern="InOut" uri="http4://{{quickstart.urlEndpoint_service}}?bridgeEndpoint=true"/>
+            <camel:removeHeaders id="_removeHeaders2" pattern="CamelHttp*"/>
+            <convertBodyTo id="_convertBodyTo1" type="String"/>
+            <stop id="_stop1"/>
+        </route>
+        <route id="MOVIMIENTOS">
+            <from id="_from3" uri="direct:movimientos"/>
+            <setHeader headerName="auxi" id="_setHeader4">
+                <simple>${body.auxi}</simple>
+            </setHeader>
+            <setHeader headerName="cias" id="_setHeader5">
+                <simple>${body.cias}</simple>
+            </setHeader>
+            <setHeader headerName="ciasDest" id="_setHeader6">
+                <simple>${body.ciasDest}</simple>
+            </setHeader>
+            <setHeader headerName="descri" id="_setHeader8">
+                <simple>${body.descri}</simple>
+            </setHeader>
+            <setHeader headerName="encargo" id="_setHeader9">
+                <simple>${body.encargo}</simple>
+            </setHeader>
+            <setHeader headerName="encargoDest" id="_setHeader10">
+                <simple>${body.encargoDest}</simple>
+            </setHeader>
+            <setHeader headerName="entidad" id="_setHeader11">
+                <simple>${body.entidad}</simple>
+            </setHeader>
+            <setHeader headerName="fecha" id="_setHeader12">
+                <simple>${body.fecha}</simple>
+            </setHeader>
+            <setHeader headerName="pFpago" id="_setHeader13">
+                <simple>${body.getpFpago()}</simple>
+            </setHeader>
+            <setHeader headerName="pOrpaVigencia" id="_setHeader14">
+                <simple>${body.getpOrpaVigencia()}</simple>
+            </setHeader>
+            <setHeader headerName="pOrpaNumero" id="_setHeader15">
+                <simple>${body.getpOrpaNumero()}</simple>
+            </setHeader>
+            <setHeader headerName="pValor" id="_setHeader16">
+                <simple>${body.getpValor()}</simple>
+            </setHeader>
+            <log id="_log2" message="PASO"/>
+            <setHeader headerName="pGravamen" id="_setHeader17">
+                <simple>${body.getpGravamen()}</simple>
+            </setHeader>
+            <setHeader headerName="pCuenta" id="_setHeader18">
+                <simple>${body.getpCuenta()}</simple>
+            </setHeader>
+            <setHeader headerName="pMoviCtaDest" id="_setHeader19">
+                <simple>${body.getpMoviCtaDest()}</simple>
+            </setHeader>
+            <setHeader headerName="pMoviTpctDest" id="_setHeader20">
+                <simple>${body.getpMoviTpctDest()}</simple>
+            </setHeader>
+            <setHeader headerName="pMoviTpctPag" id="_setHeader21">
+                <simple>${body.getpMoviTpctPag()}</simple>
+            </setHeader>
+            <setHeader headerName="pFondo" id="_setHeader22">
+                <simple>${body.getpFondo()}</simple>
+            </setHeader>
+            <setHeader headerName="pTipoReg" id="_setHeader23">
+                <simple>${body.getpTipoReg()}</simple>
+            </setHeader>
+            <to id="_to4" uri="sql-stored:classpath:sql/movimientos.sql?dataSource=#dataSource"/>
+            <log id="_log3" message="((((${body}))))"/>
+            <setProperty id="_setProperty4" propertyName="errnumOut">
+                <simple>${body.get('errnumOut')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty5" propertyName="descrOut">
+                <simple>${body.get('descrOut')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty6" propertyName="vmovirenglonOut">
+                <simple>${body.get('vmovirenglonOut')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty24" propertyName="perrorOut">
+                <simple>${body.get('perrorOut')}</simple>
+            </setProperty>
+            <choice id="_choice1">
+                <when id="_when1">
+                    <simple>${property.errnumOut} == '0'</simple>
+                    <setProperty id="_setProperty25" propertyName="descrOut">
+                        <simple>Transaccion Exitosa</simple>
+                    </setProperty>
+                    <to id="_to5" uri="direct:responseMovimientos"/>
+                </when>
+                <otherwise id="_otherwise1">
+                    <choice id="_choice2">
+                        <when id="_when2">
+                            <simple>${header.tipoEntrada} contains 'cola'</simple>
+                            <to id="_to7" uri="direct:responseMovimientos"/>
+                        </when>
+                        <otherwise id="_otherwise2">
+                            <throwException
+                                exceptionType="co.com.entelgy.exceptions.ProcedureExcepcion"
+                                id="_throwException1" message="${property.descrOut}"/>
+                        </otherwise>
+                    </choice>
+                </otherwise>
+            </choice>
+        </route>
+        <route id="RT-RESPUESTA-MOVIMIENTOS">
+            <from id="_from4" uri="direct:responseMovimientos"/>
+            <to id="_to6" uri="velocity:template/respuestaInsertarMovimientos.vm"/>
+            <log id="_log1" message="FINALIZA RUTA (((${body})))"/>
+            <removeHeader headerName="auxi"/>
+            <removeHeader headerName="cias"/>
+            <removeHeader headerName="ciasDest"/>
+            <removeHeader headerName="descri"/>
+            <removeHeader headerName="encargo"/>
+            <removeHeader headerName="encargoDest"/>
+            <removeHeader headerName="entidad"/>
+            <removeHeader headerName="fecha"/>
+            <removeHeader headerName="pFpago"/>
+            <removeHeader headerName="pOrpaVigencia"/>
+            <removeHeader headerName="pOrpaNumero"/>
+            <removeHeader headerName="pValor"/>
+            <removeHeader headerName="pGravamen"/>
+            <removeHeader headerName="pCuenta"/>
+            <removeHeader headerName="pMoviCtaDest"/>
+            <removeHeader headerName="pMoviTpctDest"/>
+            <removeHeader headerName="pMoviTpctPag"/>
+            <removeHeader headerName="pFondo"/>
+            <removeHeader headerName="pTipoReg"/>
+            <stop id="_stop2"/>
+        </route>
+    </camelContext>
+</beans>

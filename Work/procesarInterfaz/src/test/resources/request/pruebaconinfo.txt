@@ -1,0 +1,10 @@
+{
+    "pMoviTipoDoc": "AAA",
+    "pMoviCias": "AAA",
+    "pMoviCiasOrig": "AAA",
+    "pMoviOficina": "333",
+    "pMoviNumero": "AAA",
+    "pMoviRenglon": "333",
+    "p1AplicaNx1000": "AAA",
+    "iMensajeTercero_inout": "AAA"
+}

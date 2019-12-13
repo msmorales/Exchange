@@ -1,0 +1,9 @@
+{
+"pTipoId": "NIT",
+"pNumeroId": "860525148",
+"pBanco": "223", 
+"pSucursal": "",
+"pNumeroCuenta": "",
+"pTpoCuenta": "",
+"pFormaPago": ""
+}

@@ -1,0 +1,12 @@
+{
+"moviApliOrig":"#if(${exchange.properties.moviApliOrig})${exchange.properties.moviApliOrig}#end",
+"moviCias": "#if(${exchange.properties.moviCias})${exchange.properties.moviCias}#end",
+"moviCiasOrig":"#if(${exchange.properties.moviCiasOrig})${exchange.properties.moviCiasOrig}#end",
+"moviOficina":"#if(${exchange.properties.moviOficina})${exchange.properties.moviOficina}#end",
+"moviNumero":"#if(${exchange.properties.moviNumero})${exchange.properties.moviNumero}#end",
+"moviFpag":"#if(${exchange.properties.moviFpag})${exchange.properties.moviFpag}#end",
+"moviDescripcion":"#if(${exchange.properties.moviDescripcion})${exchange.properties.moviDescripcion}#end",
+"moviUsuaCrea":"#if(${exchange.properties.moviUsuaCrea})${exchange.properties.moviUsuaCrea}#end",
+"moviFecha":"#if(${exchange.properties.moviFecha})${exchange.properties.moviFecha}#end",
+"moviValor":"#if(${exchange.properties.moviValor})${exchange.properties.moviValor}#end"
+}

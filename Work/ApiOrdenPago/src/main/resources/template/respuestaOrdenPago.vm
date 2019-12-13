@@ -1,0 +1,4 @@
+{
+ "vActRta":"#if(${exchange.properties.vActRta})${exchange.properties.vActRta}#else 0 #end", 
+ "pOrpaNumero":"#if(${exchange.properties.pOrpaNumero})${exchange.properties.pOrpaNumero}#else Transaccion Exitosa#end"
+}

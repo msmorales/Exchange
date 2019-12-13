@@ -1,0 +1,21 @@
+{
+    "auxi": "0010009252",
+    "cias": "AP266",
+    "ciasDest": "AP266",
+    "descri": "ARRENDAMIENTO DE EQUIPOS",
+    "encargo": "8911",
+    "encargoDest": "",
+    "entidad": "19",
+    "fecha": "2017-12-15",
+    "pFpago": "EFT:X",
+    "pOrpaVigencia": "2017",
+    "pOrpaNumero": "V:AP266:00001781:GL266:CCAEV:8911:000616:1870",
+    "pValor": "760082.15",
+    "pGravamen": "0",
+    "pCuenta": "514505002",
+    "pMoviCtaDest": "21003056807",
+    "pMoviTpctDest": "03",
+    "pMoviTpctPag": "11",
+    "pFondo": "CCAEV",
+    "pTipoReg": "CAU"
+}

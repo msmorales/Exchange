@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:ctx="http://www.springframework.org/schema/context"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring        http://camel.apache.org/schema/spring/camel-spring.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <camel:errorHandler id="noErrorHandler" type="NoErrorHandler"/>
+    <bean class="org.slf4j.LoggerFactory" factory-method="getLogger" id="rh1">
+        <constructor-arg index="0" value="rh1"/>
+    </bean>
+    <bean class="co.com.entelgy.QuickstartConfiguration" id="prop"/>
+    <ctx:property-placeholder location="classpath:application.properties"/>
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="jms">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="${quickstart.urlBroker}"/>
+                <property name="closeTimeout" value="${quickstart.TimeOutBroker}"/>
+            </bean>
+        </property>
+    </bean>
+    <cxf:rsServer address="{{quickstart.endpoint_Path}}"
+        id="restApiEnpoint" serviceClass="co.com.entelgy.client.Client"/>
+    <camelContext id="ORQUESTADOR-BROKER-API" streamCache="true"
+        threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="properties" location="classpath:application.properties"/>
+        <threadPoolProfile defaultProfile="true" id="changedProfile"
+            maxQueueSize="100" poolSize="1"/>
+        <redeliveryPolicyProfile id="redeliveryPolicy"
+            logRetryAttempted="true" maximumRedeliveries="0"
+            redeliveryDelay="10" retriesExhaustedLogLevel="WARN"/>
+        <route id="ORQUESTADOR-BROKER-ROUTE-MAIN">
+            <from id="_from1" uri="cxfrs:bean:restApiEnpoint?bindingStyle=SimpleConsumer"/>
+            <toD id="_toD1" uri="direct:${header.operationName}"/>
+            <stop id="_stop1"/>
+        </route>
+        <route id="RT-GET-NOMBRE-PROYECTO">
+            <from id="_from2" uri="direct:nombreProyecto"/>
+            <setBody id="_setBody1">
+                <simple>{{camel.springboot.name}}</simple>
+            </setBody>
+        </route>
+        <route id="REGISTRAR-LOG-BROKER">
+            <from id="_from3" uri="direct:enviarLog"/>
+            <setProperty id="_setProperty1" propertyName="bodyAntiguo">
+                <simple>${body}</simple>
+            </setProperty>
+            <unmarshal id="_unmarshal1">
+                <json library="Jackson"/>
+            </unmarshal>
+            <setProperty id="_setProperty2" propertyName="bodyOrquestado">
+                <simple>${body.get('request')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty3" propertyName="requestOrquestado">
+                <simple>${body.get('response')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty4" propertyName="nombreServicioOrquestado">
+                <simple>${body.get('nombreServicio')}</simple>
+            </setProperty>
+            <setProperty id="_setProperty5" propertyName="fechaHoraOrquestado">
+                <simple>${body.get('fechaHora')}</simple>
+            </setProperty>
+            <setBody id="_setBody2">
+                <simple>${property.bodyOrquestado}</simple>
+            </setBody>
+            <toD id="_toD2" pattern="InOnly" uri="jms:${property.nombreServicioOrquestado}errorJMS"/>
+            <camel:pollEnrich id="_pollEnrich1">
+                <simple>jms:${property.nombreServicioOrquestado}errorJMS</simple>
+            </camel:pollEnrich>
+            <setBody id="_setBody3">
+                <simple>${property.bodyAntiguo}</simple>
+            </setBody>
+            <to id="_to1" pattern="InOnly" uri="jms:colaCentralizadaErrorJMS"/>
+            <to id="_to2" uri="velocity:template/respuestaExitoa.vm"/>
+            <log id="_log1" loggerRef="rh1" message="${body}"/>
+            <stop id="_stop2"/>
+        </route>
+        <!--         <route id="JMS-ROUTE-MAIN-TO-ELASTICSEARCH"> -->
+        <!--             <from id="_from4" uri="jms:colaCentralizadaErrorJMS"/> -->
+        <!--             <setHeader headerName="Content-Type" id="_setHeader1"> -->
+        <!--                 <constant>application/json</constant> -->
+        <!--             </setHeader> -->
+        <!--             <setHeader headerName="CamelHttpMethod" id="_setHeader2"> -->
+        <!--                 <constant>POST</constant> -->
+        <!--             </setHeader> -->
+        <!--             <toD id="_toD1" uri="http4://{{quickstart.urlElasticSearch}}/${header.nombreProyectoOrquestado}/Estructura/${header.iDExchangeRoute}?bridgeEndpoint=true&amp;throwExceptionOnFailure=false"/> -->
+        <!--             <removeHeaders id="_removeHeaders1" pattern="CamelHttp*"/> -->
+        <!--             <stop id="_stop2"/> -->
+        <!--         </route> -->
+    </camelContext>
+</beans>

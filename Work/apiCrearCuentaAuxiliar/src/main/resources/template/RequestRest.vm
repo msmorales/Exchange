@@ -1,0 +1,9 @@
+{
+"pTipoId":"#if(${exchange.properties.pTipoId})${exchange.properties.pTipoId}#end",
+"pNumeroId": "#if(${exchange.properties.pNumeroId})${exchange.properties.pNumeroId}#end",
+"pBanco":"#if(${exchange.properties.pBanco})${exchange.properties.pBanco}#end",
+"pSucursal":"#if(${exchange.properties.pSucursal})${exchange.properties.pSucursal}#end",
+"pNumeroCuenta":"#if(${exchange.properties.pNumeroCuenta})${exchange.properties.pNumeroCuenta}#end",
+"pTpoCuenta":"#if(${exchange.properties.pTpoCuenta})${exchange.properties.pTpoCuenta}#end",
+"pFormaPago":"#if(${exchange.properties.pFormaPago})${exchange.properties.pFormaPago}#end"
+}

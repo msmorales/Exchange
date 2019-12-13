@@ -1,0 +1,3 @@
+{
+ "pResultado":"#if(${exchange.properties.pResultado})${exchange.properties.pResultado}#end"
+}

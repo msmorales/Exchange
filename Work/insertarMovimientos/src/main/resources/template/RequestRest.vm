@@ -1,0 +1,21 @@
+{
+"auxi": "#if(${exchange.properties.auxi})${exchange.properties.auxi}#end",
+"cias": "#if(${exchange.properties.cias})${exchange.properties.cias}#end",
+"ciasDest": "#if(${exchange.properties.ciasDest})${exchange.properties.ciasDest}#end",
+"descri": "#if(${exchange.properties.descri})${exchange.properties.descri}#end",
+"encargo": "#if(${exchange.properties.encargo})${exchange.properties.encargo}#end",
+"encargoDest": "#if(${exchange.properties.encargoDest})${exchange.properties.encargoDest}#end",
+"entidad": "#if(${exchange.properties.entidad})${exchange.properties.entidad}#end",
+"fecha": "#if(${exchange.properties.fecha})${exchange.properties.fecha}#end",
+"pFpago": "#if(${exchange.properties.pFpago})${exchange.properties.pFpago}#end",
+"pOrpaVigencia": "#if(${exchange.properties.pOrpaVigencia})${exchange.properties.pOrpaVigencia}#end",
+"pOrpaNumero": "#if(${exchange.properties.pOrpaNumero})${exchange.properties.pOrpaNumero}#end",
+"pValor": "#if(${exchange.properties.pValor})${exchange.properties.pValor}#end",
+"pGravamen": "#if(${exchange.properties.pGravamen})${exchange.properties.pGravamen}#end",
+"pCuenta": "#if(${exchange.properties.pCuenta})${exchange.properties.pCuenta}#end",
+"pMoviCtaDest": "#if(${exchange.properties.pMoviCtaDest})${exchange.properties.pMoviCtaDest}#end",
+"pMoviTpctDest": "#if(${exchange.properties.pMoviTpctDest})${exchange.properties.pMoviTpctDest}#end",
+"pMoviTpctPag": "#if(${exchange.properties.pMoviTpctPag})${exchange.properties.pMoviTpctPag}#end",
+"pFondo": "#if(${exchange.properties.pFondo})${exchange.properties.pFondo}#end",
+"pTipoReg": "#if(${exchange.properties.pTipoReg})${exchange.properties.pTipoReg}#end"
+}

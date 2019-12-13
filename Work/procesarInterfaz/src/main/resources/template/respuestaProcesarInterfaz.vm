@@ -1,0 +1,7 @@
+{
+ "descrOut":"#if(${exchange.properties.descrOut})${exchange.properties.descrOut}#end",
+ "errnumOut":"#if(${exchange.properties.errnumOut})${exchange.properties.errnumOut}#end",
+ "imensajeerrorOut":"#if(${exchange.properties.imensajeerrorOut})${exchange.properties.imensajeerrorOut}#end",
+ "imensajeterceroInout":"#if(${exchange.properties.imensajeterceroInout})${exchange.properties.imensajeterceroInout}#end",
+ "ivalidacionOut":"#if(${exchange.properties.ivalidacionOut})${exchange.properties.ivalidacionOut}#end"
+}

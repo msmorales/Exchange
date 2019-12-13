@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:ctx="http://www.springframework.org/schema/context"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring        http://camel.apache.org/schema/spring/camel-spring.xsd  http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean class="org.slf4j.LoggerFactory" factory-method="getLogger" id="rh1">
+        <constructor-arg index="0" value="rh1"/>
+    </bean>
+    <bean class="com.entelgy.gateway.QuickstartConfiguration" id="prop"/>
+    <bean class="co.com.entelgy.processor.TransformProcessor" id="transformProcessor"/>
+    <!--         <ctx:property-placeholder location="classpath:application.properties"/> -->
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="jms">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="${quickstart.jmsBrokerURL}"/>
+                <property name="closeTimeout" value="${quickstart.jmsBrokerTimeOut}"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="co.com.entelgy.processor.DateProcessor" id="dateProcessor"/>
+    <camel:errorHandler id="noErrorHandler" type="NoErrorHandler"/>
+    <cxf:cxfEndpoint address="${quickstart.endpointCxfPath}"
+        id="saldoEncargos" serviceClass="fiduprod.wsfxf_wsdl.WsFXF" wsdlURL="wsdl/WsFXF.wsdl">
+        <!-- <cxf:properties> -->
+        <!-- <entry key="schema-validation-enabled" value="true" /> -->
+        <!-- </cxf:properties> -->
+    </cxf:cxfEndpoint>
+    <bean class="fiduprod.wsfxf_wsdl.types.PrcFdValidarSaldoElement" id="getCustomerStatus"/>
+    <camelContext id="SALDOENCARGOS-SOAP" streamCache="false"
+        threadNamePattern="100"
+        xmlns="http://camel.apache.org/schema/spring" xmlns:typ="http://fiduprod/WsFXF.wsdl/types/">
+        <!-- <propertyPlaceholder id="properties" location="classpath:application.properties"/> -->
+        <threadPoolProfile defaultProfile="true" id="changedProfile"
+            maxQueueSize="100" poolSize="1"/>
+        <redeliveryPolicyProfile id="redeliveryPolicy"
+            logRetryAttempted="true" maximumRedeliveries="0"
+            redeliveryDelay="10" retriesExhaustedLogLevel="WARN"/>
+        <onException>
+            <exception>org.apache.camel.ValidationException</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log id="_log13" loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS}} || ${exception.message}"/>
+            <log id="_log14" loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setProperty id="_setProperty14" propertyName="exceptionMessage">
+                <simple>${exception.message}</simple>
+            </setProperty>
+            <camel:convertBodyTo type="String"/>
+            <setProperty propertyName="RequestBody">
+                <simple>${body}</simple>
+            </setProperty>
+            <setProperty propertyName="nombreProyecto">
+                <simple>{{camel.springboot.name}}</simple>
+            </setProperty>
+            <setProperty propertyName="fechaSistema">
+                <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS}</simple>
+            </setProperty>
+            <bean method="process" ref="transformProcessor"/>
+            <to uri="velocity:template/ResponseBroker.vm"/>
+            <setHeader headerName="Content-Type">
+                <constant>application/json</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod">
+                <constant>POST</constant>
+            </setHeader>
+            <wireTap uri="http4://{{quickstart.urlElasticSearch}}?bridgeEndpoint=true&amp;throwExceptionOnFailure=false"/>
+            <to uri="velocity:template/faultBody.vm"/>
+            <stop/>
+        </onException>
+        <onException id="CustomExceptionHandling"
+            redeliveryPolicyRef="redeliveryPolicy" useOriginalMessage="true">
+            <exception>java.lang.Exception</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <to uri="direct:controlarErrores"/>
+            <stop/>
+        </onException>
+        <route id="GATEWAY-SALDOENCARGOS-ROUTE-MAIN" streamCache="true">
+            <from id="_from1" uri="cxf:bean:saldoEncargos?dataFormat=PAYLOAD"/>
+            <choice id="_choice1">
+                <when id="_when1">
+                    <simple>${header.operationName} == "prcFdValidarSaldo"</simple>
+                    <setHeader headerName="Operacion" id="_setHeader1">
+                        <xpath>//typ:prcFdValidarSaldoElement</xpath>
+                    </setHeader>
+                </when>
+                <when id="_when2">
+                    <simple>${header.operationName} == "prcInsertaFdTmovimiento"</simple>
+                    <setHeader headerName="Operacion" id="_setHeader2">
+                        <xpath>//typ:prcInsertaFdTmovimientoElement</xpath>
+                    </setHeader>
+                </when>
+                <when id="_when3">
+                    <simple>${header.operationName} == "prcFdInterfaz"</simple>
+                    <setHeader headerName="Operacion" id="_setHeader3">
+                        <xpath>//typ:prcFdInterfazElement</xpath>
+                    </setHeader>
+                </when>
+            </choice>
+            <to id="_to1" uri="validator:wsdl/SaldoEncargo.xsd?headerName=Operacion"/>
+            <removeHeader headerName="Operacion" id="_removeHeader1"/>
+            <convertBodyTo id="_convertBodyTo1" type="org.w3c.dom.Node"/>
+            <toD id="_toD1" uri="direct:${header.operationName}"/>
+        </route>
+        <route id="RT-PROCESSOR-VALIDASALDO">
+            <from id="_from2" uri="direct:prcFdValidarSaldo"/>
+            <log id="_log1" loggerRef="rh1" message="Valida corretamente el Schema"/>
+            <marshal id="_marshal1">
+                <xmljson forceTopLevelObject="true"
+                    removeNamespacePrefixes="true" skipNamespaces="true"/>
+            </marshal>
+            <log id="_log2" loggerRef="rh1" message="Envia a la cola"/>
+            <doTry id="_doTry1">
+                <to id="_to2" pattern="InOut" uri="jms:valSaldoEncargoJMS?replyTo=RespuestaSaldoEncargo&amp;replyToType=Exclusive&amp;errorHandlerLoggingLevel=ERROR&amp;receiveTimeout=15000"/>
+                <doCatch id="_doCatch1">
+                    <exception>java.lang.Exception</exception>
+                    <handled>
+                        <constant>true</constant>
+                    </handled>
+                    <to id="_to3" uri="direct:controlarErrores"/>
+                    <stop id="_stop1"/>
+                </doCatch>
+            </doTry>
+            <log id="_log3" loggerRef="rh1" message="Recibe respuesta de la cola"/>
+            <log id="_log17" message="(RESPUESTA COLA ===${body})))${header.CamelHttpResponseCode})"/>
+            <choice id="_choice4">
+                <when id="_when4">
+                    <simple>${header.CamelHttpResponseCode} == '500'</simple>
+                    <camel:unmarshal id="_unmarshal1">
+                        <json library="Jackson"/>
+                    </camel:unmarshal>
+                    <camel:throwException
+                        exceptionType="java.lang.Exception"
+                        id="_throwException1" message="${body.get('descripcionError')}"/>
+                </when>
+                <otherwise id="_otherwise1">
+                    <unmarshal id="_unmarshal2">
+                        <xmljson rootName="prcFdValidarSaldoElement"/>
+                    </unmarshal>
+                    <to id="_to4" uri="direct:rsValidarSaldo"/>
+                </otherwise>
+            </choice>
+            <stop id="_stop2"/>
+        </route>
+        <route errorHandlerRef="noErrorHandler" id="RT-RESPONSE-VALIDARSALDO">
+            <from id="_from3" uri="direct:rsValidarSaldo"/>
+            <setProperty id="_setProperty1" propertyName="errnumOut">
+                <xpath resultType="String">//errnumOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty2" propertyName="saldoOut">
+                <xpath resultType="String">//saldoOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty3" propertyName="descrOut">
+                <xpath resultType="String">//descrOut/text()</xpath>
+            </setProperty>
+            <choice id="_choice5">
+                <when id="_when5">
+                    <simple>${property.errnumOut} == '0'</simple>
+                    <to id="_to5" uri="velocity:template/formater.vm"/>
+                    <log id="_log4" loggerRef="rh1" message="Responde el servicio (${body})"/>
+                </when>
+                <otherwise id="_otherwise2">
+                    <throwException exceptionType="java.lang.Exception"
+                        id="_throwException2" message="${property.descrOut}"/>
+                </otherwise>
+            </choice>
+        </route>
+        <route id="RT-PROCESSOR-INSERTAMOVIMIENTO">
+            <from id="_from4" uri="direct:prcInsertaFdTmovimiento"/>
+            <log id="_log5" loggerRef="rh1" message="Valida corretamente el Schema"/>
+            <setProperty id="_setProperty15" propertyName="fechaTransform">
+                <camel:xpath resultType="String">//typ:fecha/text()</camel:xpath>
+            </setProperty>
+            <log id="_log16" message="(((${property.fechaTransform})))"/>
+            <process id="_process1" ref="dateProcessor"/>
+            <marshal id="_marshal2">
+                <xmljson forceTopLevelObject="true"
+                    removeNamespacePrefixes="true" skipNamespaces="true"/>
+            </marshal>
+            <log id="_log6" loggerRef="rh1" message="Envia a la cola"/>
+            <doTry id="_doTry2">
+                <to id="_to6" pattern="InOut" uri="jms:movimientosJMS?replyTo=RespuestaMovimientos&amp;replyToType=Exclusive&amp;errorHandlerLoggingLevel=ERROR&amp;receiveTimeout=15000"/>
+                <doCatch id="_doCatch2">
+                    <exception>java.lang.Exception</exception>
+                    <handled>
+                        <constant>true</constant>
+                    </handled>
+                    <to id="_to7" uri="direct:controlarErrores"/>
+                    <stop id="_stop3"/>
+                </doCatch>
+            </doTry>
+            <log id="_log7" loggerRef="rh1" message="Recibe respuesta de la cola"/>
+            <choice id="_choice6">
+                <when id="_when6">
+                    <simple>${header.CamelHttpResponseCode} == '500'</simple>
+                    <camel:unmarshal id="_unmarshal3">
+                        <json library="Jackson"/>
+                    </camel:unmarshal>
+                    <camel:throwException
+                        exceptionType="java.lang.Exception"
+                        id="_throwException3" message="${body.get('descripcionError')}"/>
+                </when>
+                <otherwise id="_otherwise3">
+                    <unmarshal id="_unmarshal4">
+                        <xmljson rootName="prcInsertaFdTmovimientoElement"/>
+                    </unmarshal>
+                    <to id="_to8" uri="direct:rsInsertaMovimiento"/>
+                </otherwise>
+            </choice>
+            <stop id="_stop4"/>
+        </route>
+        <route errorHandlerRef="noErrorHandler" id="RT-RESPONSE-INSERTAMOVIMIENTO">
+            <from id="_from5" uri="direct:rsInsertaMovimiento"/>
+            <setProperty id="_setProperty4" propertyName="errnumOut">
+                <xpath resultType="String">//errnumOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty5" propertyName="descrOut">
+                <xpath resultType="String">//descrOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty6" propertyName="vmovirenglonOut">
+                <xpath resultType="String">//vmovirenglonOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty7" propertyName="perrorOut">
+                <xpath resultType="String">//perrorOut/text()</xpath>
+            </setProperty>
+            <choice id="_choice7">
+                <when id="_when7">
+                    <simple>${property.errnumOut} == '0'</simple>
+                    <to id="_to9" uri="velocity:template/respuestaInsertarMovimientos.vm"/>
+                    <log id="_log8" loggerRef="rh1" message="Responde el servicio (${body})"/>
+                </when>
+                <otherwise id="_otherwise4">
+                    <throwException exceptionType="java.lang.Exception"
+                        id="_throwException4" message="${property.descrOut}"/>
+                </otherwise>
+            </choice>
+        </route>
+        <route id="RT-PROCESSOR-PROCESAINTERFAZ">
+            <from id="_from6" uri="direct:prcFdInterfaz"/>
+            <log id="_log9" loggerRef="rh1" message="Valida corretamente el Schema"/>
+            <marshal id="_marshal3">
+                <xmljson forceTopLevelObject="true"
+                    removeNamespacePrefixes="true" skipNamespaces="true"/>
+            </marshal>
+            <log id="_log10" loggerRef="rh1" message="Envia a la cola"/>
+            <doTry id="_doTry3">
+                <to id="_to10" pattern="InOut" uri="jms:procesarInterfazJMS?replyTo=RespuestaInterfaz&amp;replyToType=Exclusive&amp;errorHandlerLoggingLevel=ERROR&amp;receiveTimeout=15000"/>
+                <doCatch id="_doCatch3">
+                    <exception>java.lang.Exception</exception>
+                    <handled>
+                        <constant>true</constant>
+                    </handled>
+                    <to id="_to11" uri="direct:controlarErrores"/>
+                    <stop id="_stop5"/>
+                </doCatch>
+            </doTry>
+            <log id="_log11" loggerRef="rh1" message="Recibe respuesta de la cola"/>
+            <choice id="_choice8">
+                <when id="_when8">
+                    <simple>${header.CamelHttpResponseCode} == '500'</simple>
+                    <camel:unmarshal id="_unmarshal5">
+                        <json library="Jackson"/>
+                    </camel:unmarshal>
+                    <camel:throwException
+                        exceptionType="java.lang.Exception"
+                        id="_throwException5" message="${body.get('descripcionError')}"/>
+                </when>
+                <otherwise id="_otherwise5">
+                    <unmarshal id="_unmarshal6">
+                        <xmljson rootName="prcFdInterfazElement"/>
+                    </unmarshal>
+                    <to id="_to12" uri="direct:rsProcesaInterfaz"/>
+                </otherwise>
+            </choice>
+            <stop id="_stop6"/>
+        </route>
+        <route errorHandlerRef="noErrorHandler" id="RT-RESPONSE-PROCESAINTERFAZ">
+            <from id="_from7" uri="direct:rsProcesaInterfaz"/>
+            <setProperty id="_setProperty8" propertyName="errnumOut">
+                <xpath resultType="String">//errnumOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty9" propertyName="imensajeerrorOut">
+                <xpath resultType="String">//imensajeerrorOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty10" propertyName="descrOut">
+                <xpath resultType="String">//descrOut/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty11" propertyName="imensajeterceroInout">
+                <xpath resultType="String">//imensajeterceroInout/text()</xpath>
+            </setProperty>
+            <setProperty id="_setProperty12" propertyName="ivalidacionOut">
+                <xpath resultType="String">//ivalidacionOut/text()</xpath>
+            </setProperty>
+            <choice id="_choice9">
+                <when id="_when9">
+                    <simple>${property.errnumOut} == '0'</simple>
+                    <to id="_to13" uri="velocity:template/respuestaProcesarInterfaz.vm"/>
+                    <log id="_log12" loggerRef="rh1" message="Responde el servicio (${body})"/>
+                </when>
+                <otherwise id="_otherwise6">
+                    <throwException exceptionType="java.lang.Exception"
+                        id="_throwException6" message="${property.descrOut}"/>
+                </otherwise>
+            </choice>
+        </route>
+        <route id="RT-CONTROLA-ERRORES">
+            <from id="_from8" uri="direct:controlarErrores"/>
+            <log id="_log13" loggerRef="rh1" loggingLevel="ERROR" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS}} || ${exception.message}"/>
+            <log id="_log14" loggerRef="rh1" loggingLevel="DEBUG" message="ERROR: ${camelId} || ${routeId} || ${id} || ${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS} || ${exception.stacktrace}"/>
+            <setProperty id="_setProperty14" propertyName="exceptionMessage">
+                <simple>${exception.message}</simple>
+            </setProperty>
+            <to id="_to14" uri="velocity:template/faultBody.vm"/>
+            <log id="_log15" loggerRef="rh1" message="(((${body})))"/>
+            <stop id="_stop7"/>
+        </route>
+    </camelContext>
+</beans>

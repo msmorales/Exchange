@@ -1,0 +1,49 @@
+{
+   "ID_NEGOCIO": "GL198",
+   "ACCOUNTING_PERIOD": "1",
+   "FECHA_ASIENTO": "2019-07-06",
+   "DESCR": "CIERRE DIARIO CARTERA COLECTIVA",
+   "ORIGEN": "XF",
+   "LINEAS": [
+      {
+         "ID_NEGOCIO": "GL198",
+         "CONSECUTIVO_LINEA": "1",
+         "CUENTA": "570101001",
+         "CUENTA_BANCARIA": "",
+         "TERCERO": "",
+         "SUBFIDEICOMISO": "",
+         "DESCR": "rdtos 4 unidad",
+         "DEPARTAMENTO": "",
+         "VALOR": "103729601.41",
+         "CLASE": "SHARE",
+         "FONDO": ""
+      },
+      {
+         "ID_NEGOCIO": "GL198",
+         "CONSECUTIVO_LINEA": "2",
+         "CUENTA": "310501003",
+         "CUENTA_BANCARIA": "",
+         "TERCERO": "900251864",
+         "TIPO_DOC": "NIT",
+         "SUBFIDEICOMISO": "",
+         "DESCR": "Rendimientos",
+         "DEPARTAMENTO": "",
+         "VALOR": "-78318245.89",
+         "CLASE": "SHARE",
+         "FONDO": ""
+      },
+      {
+         "ID_NEGOCIO": "G1L198",
+         "CONSECUTIVO_LINEA": "4",
+         "CUENTA": "570101001",
+         "CUENTA_BANCARIA": "",
+         "TERCERO": "",
+         "SUBFIDEICOMISO": "",
+         "DESCR": "Rendimientos",
+         "DEPARTAMENTO": "",
+         "VALOR": "78318245.89",
+         "CLASE": "SHARE",
+         "FONDO": ""
+      }
+   ]
+}

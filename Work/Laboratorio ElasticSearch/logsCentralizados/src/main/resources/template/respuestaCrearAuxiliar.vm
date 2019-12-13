@@ -1,0 +1,3 @@
+{
+ "pAuxiliar":"#if(${exchange.properties.pAuxiliar})${exchange.properties.pAuxiliar}#end" 
+}

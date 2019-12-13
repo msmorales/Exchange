@@ -1,0 +1,4 @@
+{
+ "vActRta":"#if(${exchange.properties.vActRta})${exchange.properties.vActRta}#end",
+ "rNroComp":"#if(${exchange.properties.rNroComp})${exchange.properties.rNroComp}#end"
+}

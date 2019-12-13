@@ -1,0 +1,8 @@
+      <typ:prcInsertaFdTmovimientoResponseElement xmlns:typ="http://fiduprod/WsFXF.wsdl/types/">
+         <typ:result>
+            <typ:errnumOut>#if(${exchange.properties.errnumOut})${exchange.properties.errnumOut}#end</typ:errnumOut>
+            <typ:descrOut>#if(${exchange.properties.descrOut})${exchange.properties.descrOut}#end</typ:descrOut>
+            <typ:vmovirenglonOut>#if(${exchange.properties.vmovirenglonOut})${exchange.properties.vmovirenglonOut}#end</typ:vmovirenglonOut>
+            <typ:perrorOut>#if(${exchange.properties.perrorOut})${exchange.properties.perrorOut}#end</typ:perrorOut>
+         </typ:result>
+      </typ:prcInsertaFdTmovimientoResponseElement>

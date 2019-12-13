@@ -1,0 +1,12 @@
+{
+    "moviApliOrig": "1",
+    "moviCias": "GL199",
+    "moviCiasOrig": "GL199",
+    "moviOficina": 1,
+    "moviNumero": "2148586",
+    "moviFpag": "CSH",
+    "moviDescripcion": "Enc 8643ADICION COLPATRIA AHORROS  2148586",
+    "moviUsuaCrea": "FLEXIFON",
+    "moviFecha": "2019-11-15",
+    "moviValor": 4000000
+}
