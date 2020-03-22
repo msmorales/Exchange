@@ -15,8 +15,8 @@
     <fabric8.maven.plugin.version>3.5.40</fabric8.maven.plugin.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <camel.version>2.21.2</camel.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cxf.version>3.2.1</cxf.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -159,15 +159,16 @@
       <artifactId>camel-jacksonxml</artifactId>
       <version>3.0.0-RC2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-camel -->
-<dependency>
-    <groupId>org.apache.activemq</groupId>
-    <artifactId>activemq-camel</artifactId>
-    <version>5.11.1</version>
-</dependency>
-
-    
-
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
+      <version>5.11.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jsonpath</artifactId>
+      <version>2.19.1</version>
+    </dependency>
   </dependencies>
   <pluginRepositories>
     <pluginRepository>

@@ -4,51 +4,40 @@
     <bean class="org.mycompany.Procesos" id="helloBean"/>
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="simple-route">
-            
             <!--Se establece desde donde se captura el archivo XML-->
             <from id="_from1" uri="file:emisor/archivo"/>
-            
             <!--Se muestra el contenido del XML-->
             <log id="_log3" message="\n${body}"/>
-            
             <!--Se genera una propiedad la cual extrae la información del XML que se requiere
             	de un tag especifico-->
             <setProperty id="_setProperty1" propertyName="to">
                 <xpath resultType="String">//note/to/text()</xpath>
             </setProperty>
-            
             <!--Se genera una propiedad la cual extrae la información del XML que se requiere
             	de un tag especifico-->
             <setProperty id="_setProperty1" propertyName="from">
                 <xpath resultType="String">//note/from/text()</xpath>
             </setProperty>
-            
             <!--Se genera una propiedad la cual extrae la información del XML que se requiere
             	de un tag especifico-->
             <setProperty id="_setProperty1" propertyName="heading">
                 <xpath resultType="String">//note/heading/text()</xpath>
             </setProperty>
-            
             <!--Se genera una propiedad la cual extrae la información del XML que se requiere
-            	de un tag especifico--> 
+            	de un tag especifico-->
             <setProperty id="_setProperty1" propertyName="body">
                 <xpath resultType="String">//note/body/text()</xpath>
             </setProperty>
-            
             <!--Se muestran los datos de cada una de las propiedades-->
-            
             <log id="_log1" message="Primer dato ${property.to}"/>
             <log id="_log1" message="Segundo dato ${property.from}"/>
             <log id="_log1" message="Tercer dato ${property.heading}"/>
             <log id="_log1" message="Cuarto dato ${property.body}"/>
             <log id="_log1" message="¡Hola Entelgy!"/>
             <!--Se establece a donde va el archivo XML-->
-            
             <to id="_to1" uri="file:receptor/archivo"/>
-            
             <!--Resultado de la transacción-->
             <log id="_log2" message="Archivo movido"/>
-        
         </route>
     </camelContext>
 </beans>

@@ -16,10 +16,10 @@
     <camelContext id="camel" streamCache="true" threadNamePattern="100" xmlns="http://camel.apache.org/schema/spring">
         <dataFormats>
             <json id="serializer" library="Jackson" prettyPrint="true"/>
-            <jacksonxml id="jack"/>
+            <jacksonxml id="jack" prettyPrint="true"/>
         </dataFormats>
         <route id="ejercicio">
-            <from id="_from1" uri="ftp:localhost/Archivos?fileName=prueba-insert.txt&amp;password=entelgy&amp;username=entelgy"/>
+            <!-- <from id="_from1" uri="ftp:localhost/Archivos?fileName=prueba-insert.txt&amp;password=entelgy&amp;username=entelgy"/> -->
             <!-- <setHeader headerName="nombre"> -->
             <!-- <xpath resultType="String">/root/actors/nombre</xpath> -->
             <!-- </setHeader> -->
@@ -35,20 +35,48 @@
             <!-- <transform id="_transform1"> -->
             <!-- <method bean="replace-method" method="replaceMethod"/> -->
             <!-- </transform> -->
-            <to id="_from1" uri="timer:timerName?period=3s"/>
-            <to id="_to1" uri="sql://{{sql-query}}"/>
+            <!-- <from id="_from1" uri="timer:timerName?period=3s"/> -->
+            <from id="_from1" uri="file:emisor?noop=true&amp;fileName=archivo"/>
+            <setProperty id="_setProperty1" propertyName="FI_IMPORT_FL_XML_REQ">
+                <xpath/>
+            </setProperty>
+            <!--             <setProperty id="_setProperty1" propertyName="to"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.XML_VALUE</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <setProperty id="_setProperty1" propertyName="to2"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.ENLINEA</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <setProperty id="_setProperty1" propertyName="to3"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.BUSINESS_UNIT</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <setProperty id="_setProperty1" propertyName="to4"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.SEQNO</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <setProperty id="_setProperty1" propertyName="to5"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.ULTIMO</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <setProperty id="_setProperty1" propertyName="to6"> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ.XML_VALUE</jsonpath> -->
+            <!--             </setProperty> -->
+            <!--             <log id="_log2" message="${property.to}"/> -->
+            <!--             <log id="_log2" message="${property.to1}"/> -->
+            <!--             <log id="_log2" message="${property.to2}"/> -->
+            <!--             <log id="_log2" message="${property.to3}"/> -->
+            <!--             <log id="_log2" message="${property.to4}"/> -->
+            <!--             <log id="_log2" message="${property.to5}"/> -->
+            <!--             <log id="_log2" message="${property.to6}"/> -->
+            <!-- <to id="_to1" uri="sql://{{sql-query}}"/> -->
             <!-- <to id="_to1" uri="sql://insert into test (id_test, nombre, apellido, 
 				edad) values (3, ${header.nombre}, ${header.apellido}, ${header.edad});"/> -->
+            <!--             <split id="_split1 "> -->
+            <!--                 <jsonpath>$.FI_IMPORT_FL_XML_REQ</jsonpath> -->
+            <!--                 <marshal id="_marshal1" ref="jack"/> -->
+            <!--                 <log id="_log1" message="\n ${body}"/> -->
+            <!--             </split> -->
             <split id="_split1">
                 <simple>body</simple>
                 <marshal id="_marshal1" ref="serializer"/>
             </split>
-            <split id="_split2">
-                <simple>body</simple>
-                <marshal id="_marshal2" ref="jack"/>
-                <log id="_log1" message="\n ${body}"/>
-            </split>
-            
         </route>
     </camelContext>
 </beans>
